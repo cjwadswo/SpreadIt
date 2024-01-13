@@ -11,7 +11,7 @@ func generate_weeds():
 		var weed_instance = weed_scene.instantiate()
 		weed_instance._on_body_entered
 		weed_instance.position = Vector2(randf_range(0, get_viewport().size.x), 
-		randf_range(0, get_viewport().size.y))
+		randf_range(0, get_viewport().size.y - 200))
 		weed_instance.rotation_degrees = randf_range(-45, 45)
 		weed_instance.scale = Vector2(randf_range(0.5, 1.5), randf_range(0.5, 1.5))
 		add_child(weed_instance)

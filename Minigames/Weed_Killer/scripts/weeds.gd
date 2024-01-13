@@ -21,3 +21,4 @@ func _on_body_entered(body):
 		print("hit")
 		print(lives)
 		self.take_damage()
+		$Sound.play()
