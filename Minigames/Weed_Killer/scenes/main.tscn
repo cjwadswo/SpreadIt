@@ -133,6 +133,12 @@ frame_progress = 0.351787
 [node name="Weed_Generator" type="Node2D" parent="."]
 script = ExtResource("3_jo4fp")
 
-[node name="Weeds" parent="." groups=["Weeds"] instance=ExtResource("4_f2vxs")]
+[node name="Timer" type="Timer" parent="Weed_Generator"]
+wait_time = 2.0
+autostart = true
+
+[node name="Weeds" parent="." instance=ExtResource("4_f2vxs")]
 
 [node name="Weapon" parent="." groups=["Weapon"] instance=ExtResource("3_e530q")]
+
+[connection signal="timeout" from="Weed_Generator/Timer" to="Weed_Generator" method="_on_timer_timeout"]

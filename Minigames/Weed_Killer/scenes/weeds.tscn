@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0y8m"]
 size = Vector2(32, 128)
 
-[node name="weeds" type="Area2D"]
+[node name="weeds" type="Area2D" groups=["Weeds"]]
 script = ExtResource("1_rhts6")
 
 [node name="Icon" type="Sprite2D" parent="."]

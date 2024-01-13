@@ -1,24 +1,24 @@
 extends Node2D
 
-@export var lives = 5
+@export var health = 5
+@export var scale_speed = 0.25
+var target_scale = Vector2(1.0, 1.0)
 
 func _ready():
-	pass
+	scale.x = 0
+	scale.y = 0
 
 func _process(delta):
-	pass
+	scale = scale.lerp(target_scale, scale_speed * delta)
 
 func take_damage():
-	lives -= 1
-	self.scale.x -= 0.15
-	self.scale.y -= 0.15
-	print("lives - 1")
-	if lives <= 0:
+	health -= 1
+	scale.x -= 0.15
+	scale.y -= 0.15
+	if health <= 0:
 		queue_free()
 
 func _on_body_entered(body):
 	if body.is_in_group("Weapon"):
-		print("hit")
-		print(lives)
-		self.take_damage()
+		take_damage()
 		$Sound.play()
