@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs0jxye6epk82"]
+
+[ext_resource type="Script" path="res://scripts/weeds.gd" id="1_rhts6"]
+[ext_resource type="Texture2D" uid="uid://cqoah8mbejab2" path="res://sprites/weed_sprite.png" id="2_rqrls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0y8m"]
+size = Vector2(32, 128)
+
+[node name="weeds" type="Area2D"]
+script = ExtResource("1_rhts6")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 1)
+texture = ExtResource("2_rqrls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u0y8m")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

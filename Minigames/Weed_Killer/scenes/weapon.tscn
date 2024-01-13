@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dot15e1bdptgn"]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_gkfgs"]
+[ext_resource type="Texture2D" uid="uid://cly6l2e7i1tgx" path="res://sprites/scythe_sprite.png" id="2_fmtfl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvky0"]
+size = Vector2(123, 35)
+
+[node name="weapon" type="CharacterBody2D"]
+script = ExtResource("1_gkfgs")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_fmtfl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, -46.5)
+shape = SubResource("RectangleShape2D_rvky0")
