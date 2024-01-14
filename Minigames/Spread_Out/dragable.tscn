@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://ycx65yvthxb4"]
+[gd_scene load_steps=5 format=3 uid="uid://ycx65yvthxb4"]
 
 [ext_resource type="Texture2D" uid="uid://byoux366sicdb" path="res://Sprites/player_sprite.png" id="1_p3low"]
-[ext_resource type="Script" path="res://dragable.gd" id="1_sag7u"]
+[ext_resource type="Script" path="res://Minigames/Spread_Out/dragable.gd" id="1_sag7u"]
+[ext_resource type="Texture2D" uid="uid://bgbc8x2licc1l" path="res://Sprites/player_sprite_angry.png" id="2_jxw1s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2u15s"]
 radius = 8.0
 
-[node name="Character" type="StaticBody2D"]
-position = Vector2(103, 72)
+[node name="Character" type="StaticBody2D" groups=["Player"]]
 script = ExtResource("1_sag7u")
 
+[node name="PlayerSpriteAngry" type="Sprite2D" parent="."]
+texture = ExtResource("2_jxw1s")
+
 [node name="Sprite" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_p3low")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
