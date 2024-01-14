@@ -142,9 +142,9 @@ autostart = true
 
 [node name="Weapon" parent="." groups=["Weapon"] instance=ExtResource("3_e530q")]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_rf8jr")
-volume_db = -15.0
+volume_db = -20.0
 autoplay = true
 
 [connection signal="timeout" from="Weed_Generator/Timer" to="Weed_Generator" method="_on_timer_timeout"]
