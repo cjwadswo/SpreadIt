@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Area2D
 var is_grabable : bool = false
 var is_currently_grabbed : bool = false
 # Called when the node enters the scene tree for the first time.
