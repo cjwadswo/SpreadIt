@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://dou2henr0qryf"]
 
-[ext_resource type="Texture2D" uid="uid://bxbn83chtuxye" path="res://sprites/fliower-sheet.png" id="2_ysujx"]
+[ext_resource type="Texture2D" uid="uid://bxbn83chtuxye" path="res://sprites/fliower_sheet.png" id="2_ysujx"]
 [ext_resource type="PackedScene" uid="uid://dot15e1bdptgn" path="res://scenes/weapon.tscn" id="3_e530q"]
 [ext_resource type="Script" path="res://scripts/weed_generator.gd" id="3_jo4fp"]
 [ext_resource type="Texture2D" uid="uid://bth2dvp40weky" path="res://sprites/grass_tileset.png" id="4_33lhr"]
