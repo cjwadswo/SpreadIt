@@ -6,6 +6,7 @@ var node_count
 
 func _ready():
 	generate_weeds()
+	%Timer.start()
 
 func generate_weeds():
 	for i in range(weed_count):
@@ -22,3 +23,8 @@ func _on_timer_timeout():
 	print(node_count)
 	if node_count < 250:
 		generate_weeds()
+
+func _process(delta):
+	if Global.score > 2:
+		%Timer.stop()
+
