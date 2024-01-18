@@ -1,29 +1,88 @@
-[gd_scene load_steps=4 format=3 uid="uid://wmd12yahcqgr"]
+[gd_scene load_steps=6 format=3 uid="uid://wmd12yahcqgr"]
 
 [ext_resource type="Script" path="res://Minigames/Spread_Out/Spread_Out_Minigame.gd" id="1_6365x"]
 [ext_resource type="PackedScene" uid="uid://dwep8htre4rqk" path="res://Minigames/Spread_Out/drop_area.tscn" id="1_m67v6"]
 [ext_resource type="PackedScene" uid="uid://s4htdwj0gw8w" path="res://Minigames/Spread_Out/dragable2.tscn" id="2_xbvk2"]
 
+[sub_resource type="FontFile" id="FontFile_mtw10"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/12/0 = Vector2(0, 0)
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/15/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/12/0 = Vector2(0, 0)
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/14/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/12/0 = Vector2(0, 0)
+cache/0/13/0/ascent = 0.0
+cache/0/13/0/descent = 0.0
+cache/0/13/0/underline_position = 0.0
+cache/0/13/0/underline_thickness = 0.0
+cache/0/13/0/scale = 1.0
+cache/0/13/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/12/0 = Vector2(0, 0)
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/12/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/12/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3lbbm"]
+line_spacing = 1.0
+font = SubResource("FontFile_mtw10")
+font_size = 12
+outline_size = 4
+outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
 [node name="Spread_Out_Minigame" type="Node2D"]
 script = ExtResource("1_6365x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
 
 [node name="Area2D" parent="." instance=ExtResource("1_m67v6")]
-position = Vector2(61, 33)
+position = Vector2(50, -5)
 
 [node name="Area2D2" parent="." instance=ExtResource("1_m67v6")]
-position = Vector2(50, -68)
+position = Vector2(44, -124)
 
 [node name="Area2D5" parent="." instance=ExtResource("1_m67v6")]
-position = Vector2(-3, 26)
+position = Vector2(18, 74)
 
 [node name="Area2D3" parent="." instance=ExtResource("1_m67v6")]
-position = Vector2(-138, -66)
+position = Vector2(-60, -112)
 
 [node name="Area2D4" parent="." instance=ExtResource("1_m67v6")]
-position = Vector2(-95, 25)
+position = Vector2(-64, 83)
 
 [node name="Object" parent="." instance=ExtResource("2_xbvk2")]
 position = Vector2(-26, -17)
@@ -39,6 +98,16 @@ position = Vector2(-23, 9)
 
 [node name="Object5" parent="." instance=ExtResource("2_xbvk2")]
 position = Vector2(3, 2)
+
+[node name="WonText" type="Label" parent="."]
+visible = false
+offset_left = -86.0
+offset_top = -69.0
+offset_right = -21.0
+offset_bottom = -43.0
+scale = Vector2(3.28, 3.08)
+text = "You won!"
+label_settings = SubResource("LabelSettings_3lbbm")
 
 [connection signal="area_entered" from="Area2D3" to="Area2D" method="_on_area_2d_3_area_entered"]
 [connection signal="child_entered_tree" from="Area2D3" to="Area2D" method="_on_area_2d_3_child_entered_tree"]
