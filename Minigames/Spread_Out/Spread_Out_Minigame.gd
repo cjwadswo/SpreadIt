@@ -9,7 +9,7 @@ func _ready():
 	#generate draggable objects
 	
 	#generate drop_area zones
-	
+	$Timer.start()
 	draggable_nodes = get_tree().get_nodes_in_group("dragable")
 	draggable_count = draggable_nodes.size()
 	has_won_text = get_node("WonText")
@@ -29,3 +29,7 @@ func check_win_condition():
 		has_won_text.visible = true
 		
 		
+
+
+func _on_timer_timeout():
+	get_node("MinigameText").visible = false

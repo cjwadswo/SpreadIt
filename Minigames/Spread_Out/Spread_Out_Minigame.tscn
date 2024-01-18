@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://wmd12yahcqgr"]
+[gd_scene load_steps=7 format=3 uid="uid://wmd12yahcqgr"]
 
 [ext_resource type="Script" path="res://Minigames/Spread_Out/Spread_Out_Minigame.gd" id="1_6365x"]
 [ext_resource type="PackedScene" uid="uid://dwep8htre4rqk" path="res://Minigames/Spread_Out/drop_area.tscn" id="1_m67v6"]
@@ -63,6 +63,11 @@ font_size = 12
 outline_size = 4
 outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_5pbsm"]
+font_size = 28
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Spread_Out_Minigame" type="Node2D"]
 script = ExtResource("1_6365x")
 
@@ -109,5 +114,17 @@ scale = Vector2(3.28, 3.08)
 text = "You won!"
 label_settings = SubResource("LabelSettings_3lbbm")
 
+[node name="Timer" type="Timer" parent="."]
+
+[node name="MinigameText" type="Label" parent="."]
+offset_left = -50.0
+offset_top = -54.0
+offset_right = 74.0
+offset_bottom = 44.0
+text = "Spread
+Them!"
+label_settings = SubResource("LabelSettings_5pbsm")
+
 [connection signal="area_entered" from="Area2D3" to="Area2D" method="_on_area_2d_3_area_entered"]
 [connection signal="child_entered_tree" from="Area2D3" to="Area2D" method="_on_area_2d_3_child_entered_tree"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
