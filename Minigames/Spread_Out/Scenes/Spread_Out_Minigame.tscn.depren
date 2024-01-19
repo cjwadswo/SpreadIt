@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://wmd12yahcqgr"]
+
+[ext_resource type="Script" path="res://Minigames/Spread_Out/Spread_Out_Minigame.gd" id="1_vu0dk"]
+[ext_resource type="Script" path="res://Minigames/Spread_Out/Global.gd" id="2_k5yfd"]
+[ext_resource type="PackedScene" uid="uid://c0sq3n0ak4kcj" path="res://Minigames/Spread_Out/area_circle.tscn" id="3_uoqf6"]
+[ext_resource type="PackedScene" uid="uid://d3fhdrpflwbm5" path="res://Minigames/Spread_Out/area_square.tscn" id="4_1di6n"]
+[ext_resource type="PackedScene" uid="uid://b74uop864jp1f" path="res://Minigames/Spread_Out/area_triangle.tscn" id="5_74wqb"]
+[ext_resource type="PackedScene" uid="uid://chsc0tf1uytta" path="res://Minigames/Spread_Out/square.tscn" id="6_1a87c"]
+[ext_resource type="PackedScene" uid="uid://c6w8llo402wyi" path="res://Minigames/Spread_Out/triangle.tscn" id="7_2cegj"]
+[ext_resource type="PackedScene" uid="uid://dojhm07by55it" path="res://Minigames/Spread_Out/circle.tscn" id="8_mirpp"]
+[ext_resource type="Script" path="res://Minigames/Spread_Out/Mini_game_timer.gd" id="9_2ga6o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3lbbm"]
+font_size = 28
+outline_size = 4
+outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5pbsm"]
+font_size = 28
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Spread_Out_Minigame" type="Node2D"]
+script = ExtResource("1_vu0dk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+script = ExtResource("2_k5yfd")
+
+[node name="area_circle" parent="." groups=["Circle"] instance=ExtResource("3_uoqf6")]
+position = Vector2(-37, 9)
+scale = Vector2(2, 2)
+
+[node name="area_square" parent="." groups=["Square"] instance=ExtResource("4_1di6n")]
+position = Vector2(52, -27)
+scale = Vector2(2, 2)
+
+[node name="area_triangle" parent="." groups=["Triangle"] instance=ExtResource("5_74wqb")]
+position = Vector2(-41, 69)
+scale = Vector2(2, 2)
+
+[node name="Square" parent="." groups=["Circle", "dragable"] instance=ExtResource("6_1a87c")]
+position = Vector2(-3, -32)
+scale = Vector2(2, 2)
+
+[node name="Triangle" parent="." groups=["Circle", "dragable"] instance=ExtResource("7_2cegj")]
+position = Vector2(-37, -51)
+scale = Vector2(2, 2)
+
+[node name="Circle" parent="." groups=["dragable"] instance=ExtResource("8_mirpp")]
+position = Vector2(-69, -12)
+scale = Vector2(2, 2)
+
+[node name="WonText" type="Label" parent="."]
+visible = false
+offset_left = -56.0
+offset_top = -67.0
+offset_right = 10.0
+offset_bottom = 17.0
+scale = Vector2(1.82303, 1.32612)
+text = "You 
+won!"
+label_settings = SubResource("LabelSettings_3lbbm")
+
+[node name="MinigameText" type="Label" parent="."]
+offset_left = -50.0
+offset_top = -54.0
+offset_right = 74.0
+offset_bottom = 44.0
+text = "Spread
+Them!"
+label_settings = SubResource("LabelSettings_5pbsm")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Mini_game_timer" type="Timer" parent="."]
+script = ExtResource("9_2ga6o")
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 72.0
+offset_top = -163.0
+offset_right = 112.0
+offset_bottom = -137.0
+text = "8"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Mini_game_timer" to="Mini_game_timer" method="_on_timeout"]

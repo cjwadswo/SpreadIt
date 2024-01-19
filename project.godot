@@ -20,6 +20,10 @@ window/size/viewport_width=360
 window/size/viewport_height=640
 window/stretch/mode="viewport"
 
+[gui]
+
+theme/custom_font="res://Minigames/pixely[1].ttf"
+
 [input]
 
 Click={

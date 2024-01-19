@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://wmd12yahcqgr"]
+[gd_scene load_steps=10 format=3 uid="uid://wmd12yahcqgr"]
 
 [ext_resource type="Script" path="res://Minigames/Spread_Out/Spread_Out_Minigame.gd" id="1_6365x"]
 [ext_resource type="PackedScene" uid="uid://c0sq3n0ak4kcj" path="res://Minigames/Spread_Out/area_circle.tscn" id="2_xbvk2"]
@@ -8,11 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dojhm07by55it" path="res://Minigames/Spread_Out/circle.tscn" id="5_w8y3q"]
 [ext_resource type="Script" path="res://Minigames/Spread_Out/Mini_game_timer.gd" id="8_4tmaa"]
 [ext_resource type="PackedScene" uid="uid://b74uop864jp1f" path="res://Minigames/Spread_Out/area_triangle.tscn" id="8_d0pdb"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_3lbbm"]
-font_size = 28
-outline_size = 4
-outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_5pbsm"]
 font_size = 28
@@ -58,7 +53,6 @@ offset_bottom = 17.0
 scale = Vector2(1.82303, 1.32612)
 text = "You 
 won!"
-label_settings = SubResource("LabelSettings_3lbbm")
 
 [node name="MinigameText" type="Label" parent="."]
 offset_left = -50.0
