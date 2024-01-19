@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0sq3n0ak4kcj"]
+
+[ext_resource type="PackedScene" uid="uid://dwep8htre4rqk" path="res://Minigames/Spread_Out/drop_area.tscn" id="1_fos3u"]
+
+[node name="area_circle" instance=ExtResource("1_fos3u")]

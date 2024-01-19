@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://chsc0tf1uytta"]
+
+[ext_resource type="PackedScene" uid="uid://s4htdwj0gw8w" path="res://Minigames/Spread_Out/shapes.tscn" id="1_vsmhc"]
+[ext_resource type="Texture2D" uid="uid://bxb53udce5pwr" path="res://Minigames/Spread_Out/Sprites/player_sprite_square_happy.png" id="2_vq3aq"]
+[ext_resource type="Texture2D" uid="uid://u5f4iyym6g0q" path="res://Minigames/Spread_Out/Sprites/player_sprite_square_angry.png" id="3_jefj5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11qy5"]
+size = Vector2(12, 12)
+
+[node name="Square" groups=["Square"] instance=ExtResource("1_vsmhc")]
+
+[node name="Area2D" parent="." index="0" groups=["Square"]]
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_11qy5")
+
+[node name="HappySprite" parent="Area2D" index="1"]
+texture = ExtResource("2_vq3aq")
+
+[node name="AngrySprite" parent="Area2D" index="2"]
+texture = ExtResource("3_jefj5")

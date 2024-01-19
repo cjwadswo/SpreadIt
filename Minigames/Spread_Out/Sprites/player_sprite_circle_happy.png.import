@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byoux366sicdb"
-path="res://.godot/imported/player_sprite.png-419ce3799b047adbb1968c614654b682.ctex"
+uid="uid://bkqrtha1irvab"
+path="res://.godot/imported/player_sprite_circle_happy.png-2124b587fd73644df8e46568b887b527.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/player_sprite.png"
-dest_files=["res://.godot/imported/player_sprite.png-419ce3799b047adbb1968c614654b682.ctex"]
+source_file="res://Minigames/Spread_Out/Sprites/player_sprite_circle_happy.png"
+dest_files=["res://.godot/imported/player_sprite_circle_happy.png-2124b587fd73644df8e46568b887b527.ctex"]
 
 [params]
 

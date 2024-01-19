@@ -3,6 +3,7 @@ var draggable_nodes
 var draggable_count : int
 var has_won : bool = false
 var has_won_text : Label
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -22,14 +23,12 @@ func _process(delta):
 func check_win_condition():
 	var count : int = 0
 	for node in draggable_nodes:
-		if node.is_in_area == true:
+		if node.get_child(0).is_in_area == true:
 			count += 1
 	if count == draggable_count:
 		has_won = true
 		has_won_text.visible = true
 		
 		
-
-
 func _on_timer_timeout():
 	get_node("MinigameText").visible = false

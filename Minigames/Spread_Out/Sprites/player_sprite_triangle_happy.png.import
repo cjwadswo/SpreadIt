@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgbc8x2licc1l"
-path="res://.godot/imported/player_sprite_angry.png-369a48305a0e507e512a63c679e287e5.ctex"
+uid="uid://d1ia07fw37vbn"
+path="res://.godot/imported/player_sprite_triangle_happy.png-035b901907793ae1a9d04f14024a8b46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/player_sprite_angry.png"
-dest_files=["res://.godot/imported/player_sprite_angry.png-369a48305a0e507e512a63c679e287e5.ctex"]
+source_file="res://Minigames/Spread_Out/Sprites/player_sprite_triangle_happy.png"
+dest_files=["res://.godot/imported/player_sprite_triangle_happy.png-035b901907793ae1a9d04f14024a8b46.ctex"]
 
 [params]
 

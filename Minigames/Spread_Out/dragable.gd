@@ -17,7 +17,7 @@ func _process(delta):
 func grab():
 	is_currently_grabbed = true
 	var mouse_position = get_global_mouse_position()
-	global_position = mouse_position
+	self.global_position = mouse_position
 
 func release():
 	is_currently_grabbed = false
