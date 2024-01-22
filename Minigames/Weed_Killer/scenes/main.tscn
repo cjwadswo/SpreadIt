@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dou2henr0qryf"]
+[gd_scene load_steps=26 format=3 uid="uid://dou2henr0qryf"]
 
 [ext_resource type="Script" path="res://scripts/global.gd" id="1_jk130"]
 [ext_resource type="Texture2D" uid="uid://bxbn83chtuxye" path="res://sprites/fliower_sheet.png" id="2_ysujx"]
@@ -9,6 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://d3gyjxws3fsb" path="res://sounds/music.mp3" id="6_rf8jr"]
 [ext_resource type="Script" path="res://scenes/flower.gd" id="7_qmp0j"]
 [ext_resource type="FontFile" uid="uid://ctxvr2siy75fd" path="res://pixely_font.ttf" id="9_rsrex"]
+[ext_resource type="Script" path="res://scenes/Label.gd" id="10_k4ho5"]
+[ext_resource type="Script" path="res://scenes/Timer.gd" id="11_s5t42"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2sqmc"]
 texture = ExtResource("4_33lhr")
@@ -187,15 +189,38 @@ volume_db = -20.0
 autoplay = true
 
 [node name="Label" type="Label" parent="."]
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_right = 360.0
-offset_bottom = 620.0
+anchor_bottom = 0.5
+offset_left = 44.0
+offset_top = 536.0
+offset_right = 314.0
+offset_bottom = 578.0
 grow_horizontal = 2
-text = "WEED KILLER"
+grow_vertical = 2
+pivot_offset = Vector2(135, 21)
+size_flags_horizontal = 4
+text = "Weeds
+are
+Spreading!"
 label_settings = SubResource("LabelSettings_hkswq")
 horizontal_alignment = 1
 vertical_alignment = 2
+script = ExtResource("10_k4ho5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+script = ExtResource("11_s5t42")
+
+[node name="Label" type="Label" parent="Timer"]
+offset_left = 318.0
+offset_top = 2.0
+offset_right = 358.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("9_rsrex")
+text = "5"
 
 [connection signal="timeout" from="Weed_Generator/Timer" to="Weed_Generator" method="_on_timer_timeout"]
