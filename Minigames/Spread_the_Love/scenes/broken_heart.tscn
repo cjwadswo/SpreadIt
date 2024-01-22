@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk4dff4q5fd3c"]
+
+[ext_resource type="Script" path="res://scripts/broken_heart.gd" id="1_txqn8"]
+[ext_resource type="Texture2D" uid="uid://wso6e4eqbo84" path="res://sprites/broken_heart.png" id="2_7touy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10j1p"]
+size = Vector2(32, 32)
+
+[node name="broken_heart" type="Area2D"]
+script = ExtResource("1_txqn8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7touy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_10j1p")

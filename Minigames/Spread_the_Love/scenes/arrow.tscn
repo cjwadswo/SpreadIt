@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgsfkhft5mmeh"]
+
+[ext_resource type="Script" path="res://scripts/arrow.gd" id="1_h0e2f"]
+[ext_resource type="Texture2D" uid="uid://bwbwwfyqofy75" path="res://icon.svg" id="2_41vya"]
+[ext_resource type="Texture2D" uid="uid://dgm2jyd723wk" path="res://sprites/heart.png" id="3_6ohex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2glrm"]
+size = Vector2(560, 28)
+
+[node name="arrow" type="Area2D" groups=["arrow"]]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_h0e2f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+rotation = 1.5708
+scale = Vector2(0.05, 1)
+texture = ExtResource("2_41vya")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-58, -0.0151862)
+rotation = 1.5708
+scale = Vector2(0.30118, 0.1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(75, 1.5)
+scale = Vector2(2.75, 2.75)
+texture = ExtResource("3_6ohex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(74, 3.14304e-06)
+rotation = 1.5708
+scale = Vector2(0.05, 1)
+shape = SubResource("RectangleShape2D_2glrm")
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
