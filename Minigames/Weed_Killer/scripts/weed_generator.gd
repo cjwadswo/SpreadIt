@@ -1,7 +1,7 @@
 extends Node
 
 @export var weed_scene = preload("res://scenes/weeds.tscn")
-@export var weed_count = 50
+@export var weed_count = 50 * Global.speed
 var node_count
 
 func _ready():
@@ -21,10 +21,9 @@ func generate_weeds():
 func _on_timer_timeout():
 	var node_count = get_tree().get_nodes_in_group("Weeds").size()
 	print(node_count)
-	if node_count < 250:
+	if node_count < (100 * Global.speed):
 		generate_weeds()
 
 func _process(delta):
-	if Global.score > 2:
+	if Global.score > 1:
 		%Timer.stop()
-

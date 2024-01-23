@@ -14,5 +14,4 @@ func _process(delta):
 
 func _ready():
 	pass
-	#text = "Cut the Weeds!"
 

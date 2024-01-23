@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var health = 10
-@export var scale_speed = 0.25
+@export var scale_speed = (0.25 * Global.speed) as float
 var target_scale = Vector2(1.0, 1.0)
 
 func _ready():
@@ -19,7 +19,6 @@ func take_damage():
 	$CPUParticles2D.emitting = true
 	if health <= 0:
 		queue_free()
-		Global.score += 1
 
 func _on_body_entered(body):
 	if body.is_in_group("Weapon"):

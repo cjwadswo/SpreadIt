@@ -1,16 +1,20 @@
-[gd_scene load_steps=26 format=3 uid="uid://dou2henr0qryf"]
+[gd_scene load_steps=30 format=3 uid="uid://dou2henr0qryf"]
 
-[ext_resource type="Script" path="res://scripts/global.gd" id="1_jk130"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_ognl5"]
 [ext_resource type="Texture2D" uid="uid://bxbn83chtuxye" path="res://sprites/fliower_sheet.png" id="2_ysujx"]
 [ext_resource type="PackedScene" uid="uid://dot15e1bdptgn" path="res://scenes/weapon.tscn" id="3_e530q"]
 [ext_resource type="Script" path="res://scripts/weed_generator.gd" id="3_jo4fp"]
 [ext_resource type="Texture2D" uid="uid://bth2dvp40weky" path="res://sprites/grass_tileset.png" id="4_33lhr"]
 [ext_resource type="PackedScene" uid="uid://cs0jxye6epk82" path="res://scenes/weeds.tscn" id="4_f2vxs"]
+[ext_resource type="Script" path="res://scripts/flower2.gd" id="5_nsby8"]
+[ext_resource type="Script" path="res://scripts/flower3.gd" id="6_h4gbc"]
 [ext_resource type="AudioStream" uid="uid://d3gyjxws3fsb" path="res://sounds/music.mp3" id="6_rf8jr"]
-[ext_resource type="Script" path="res://scenes/flower.gd" id="7_qmp0j"]
+[ext_resource type="Script" path="res://scripts/flower.gd" id="7_qmp0j"]
 [ext_resource type="FontFile" uid="uid://ctxvr2siy75fd" path="res://pixely_font.ttf" id="9_rsrex"]
-[ext_resource type="Script" path="res://scenes/Label.gd" id="10_k4ho5"]
-[ext_resource type="Script" path="res://scenes/Timer.gd" id="11_s5t42"]
+[ext_resource type="Script" path="res://scripts/Label.gd" id="10_k4ho5"]
+[ext_resource type="Script" path="res://scripts/Timer.gd" id="11_s5t42"]
+[ext_resource type="Script" path="res://scenes/SpeedLabel.gd" id="13_07pvn"]
+[ext_resource type="Script" path="res://scenes/ScoreLabel.gd" id="14_axm2p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2sqmc"]
 texture = ExtResource("4_33lhr")
@@ -120,7 +124,7 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 0
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_jk130")
+script = ExtResource("1_ognl5")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_vdeoj")
@@ -129,7 +133,8 @@ layer_0/tile_data = PackedInt32Array(65535, 196608, 0, 131071, 196608, 0, 196607
 
 [node name="Flower" type="Area2D" parent="."]
 modulate = Color(0.501961, 0.501961, 0.501961, 1)
-position = Vector2(173, 132)
+position = Vector2(176, 332)
+collision_layer = 0
 script = ExtResource("7_qmp0j")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Flower"]
@@ -144,6 +149,7 @@ shape = SubResource("RectangleShape2D_s6qq0")
 [node name="Flower2" type="Area2D" parent="."]
 modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(230, 224)
+collision_layer = 0
 script = ExtResource("7_qmp0j")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Flower2"]
@@ -159,6 +165,7 @@ shape = SubResource("RectangleShape2D_s6qq0")
 [node name="Flower3" type="Area2D" parent="."]
 modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(119, 229)
+collision_layer = 0
 script = ExtResource("7_qmp0j")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Flower3"]
@@ -167,6 +174,106 @@ sprite_frames = SubResource("SpriteFrames_tdff2")
 frame_progress = 0.0656753
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flower3"]
+visible = false
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_s6qq0")
+
+[node name="Flower4" type="Area2D" parent="."]
+visible = false
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(156, 335)
+collision_layer = 0
+script = ExtResource("5_nsby8")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Flower4"]
+modulate = Color(0, 1, 1, 1)
+sprite_frames = SubResource("SpriteFrames_tdff2")
+frame_progress = 0.0656753
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower4"]
+visible = false
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_s6qq0")
+
+[node name="Flower5" type="Area2D" parent="."]
+visible = false
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(244, 329)
+collision_layer = 0
+script = ExtResource("5_nsby8")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Flower5"]
+modulate = Color(1, 1, 0, 1)
+sprite_frames = SubResource("SpriteFrames_tdff2")
+frame_progress = 0.0656753
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower5"]
+visible = false
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_s6qq0")
+
+[node name="Flower6" type="Area2D" parent="."]
+visible = false
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(224, 332)
+collision_layer = 0
+script = ExtResource("5_nsby8")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Flower6"]
+sprite_frames = SubResource("SpriteFrames_tdff2")
+frame_progress = 0.0656753
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower6"]
+visible = false
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_s6qq0")
+
+[node name="Flower7" type="Area2D" parent="."]
+visible = false
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(126, 328)
+collision_layer = 0
+script = ExtResource("6_h4gbc")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Flower7"]
+sprite_frames = SubResource("SpriteFrames_tdff2")
+frame_progress = 0.0656753
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower7"]
+visible = false
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_s6qq0")
+
+[node name="Flower8" type="Area2D" parent="."]
+visible = false
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(302, 264)
+collision_layer = 0
+script = ExtResource("6_h4gbc")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Flower8"]
+modulate = Color(1, 1, 0, 1)
+sprite_frames = SubResource("SpriteFrames_tdff2")
+frame_progress = 0.0656753
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower8"]
+visible = false
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_s6qq0")
+
+[node name="Flower9" type="Area2D" parent="."]
+visible = false
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(96, 339)
+collision_layer = 0
+script = ExtResource("6_h4gbc")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Flower9"]
+modulate = Color(0, 1, 1, 1)
+sprite_frames = SubResource("SpriteFrames_tdff2")
+frame_progress = 0.0656753
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower9"]
 visible = false
 position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_s6qq0")
@@ -188,39 +295,85 @@ stream = ExtResource("6_rf8jr")
 volume_db = -20.0
 autoplay = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+script = ExtResource("11_s5t42")
+
+[node name="Label" type="Label" parent="Timer"]
+offset_left = 312.0
+offset_top = 2.0
+offset_right = 358.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("9_rsrex")
+text = "10.0"
+
+[node name="SpeedLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 76.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("9_rsrex")
+text = "Speed: "
+script = ExtResource("13_07pvn")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 26.0
+offset_right = 76.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("9_rsrex")
+text = "Score: "
+script = ExtResource("14_axm2p")
+
+[node name="Pause" type="ColorRect" parent="."]
+process_mode = 2
+visible = false
+offset_right = 360.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Pause"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 44.0
-offset_top = 536.0
-offset_right = 314.0
-offset_bottom = 578.0
+offset_left = -132.0
+offset_top = -268.0
+offset_right = 138.0
+offset_bottom = -46.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(135, 21)
 size_flags_horizontal = 4
 text = "Weeds
 are
-Spreading!"
+Spreading!
+
+Cut them!"
 label_settings = SubResource("LabelSettings_hkswq")
 horizontal_alignment = 1
 vertical_alignment = 2
 script = ExtResource("10_k4ho5")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-one_shot = true
-script = ExtResource("11_s5t42")
-
-[node name="Label" type="Label" parent="Timer"]
-offset_left = 318.0
-offset_top = 2.0
-offset_right = 358.0
-offset_bottom = 25.0
+[node name="Button" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 488.0
+offset_right = 218.0
+offset_bottom = 517.0
 theme_override_fonts/font = ExtResource("9_rsrex")
-text = "5"
+text = "START"
 
+[connection signal="emitscore" from="Flower" to="." method="_on_flower_emitscore"]
+[connection signal="emitscore" from="Flower2" to="." method="_on_flower_emitscore"]
+[connection signal="emitscore" from="Flower3" to="." method="_on_flower_emitscore"]
+[connection signal="emitscore" from="Flower4" to="." method="_on_flower_emitscore"]
+[connection signal="emitscore" from="Flower5" to="." method="_on_flower_emitscore"]
+[connection signal="emitscore" from="Flower6" to="." method="_on_flower_emitscore"]
+[connection signal="emitscore" from="Flower7" to="." method="_on_flower_emitscore"]
+[connection signal="emitscore" from="Flower8" to="." method="_on_flower_emitscore"]
+[connection signal="emitscore" from="Flower9" to="." method="_on_flower_emitscore"]
 [connection signal="timeout" from="Weed_Generator/Timer" to="Weed_Generator" method="_on_timer_timeout"]
+[connection signal="pressed" from="Pause/Button" to="." method="_on_button_pressed"]
