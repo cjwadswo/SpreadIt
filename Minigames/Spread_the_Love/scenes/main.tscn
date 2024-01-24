@@ -1,45 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr3w1jcbqjvjf"]
+[gd_scene load_steps=9 format=3 uid="uid://cr3w1jcbqjvjf"]
 
-[ext_resource type="Script" path="res://scripts/global.gd" id="1_h00ph"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_ejnl7"]
 [ext_resource type="FontFile" uid="uid://b4am8e5yrtwmg" path="res://pixely_font.ttf" id="1_sn41x"]
 [ext_resource type="PackedScene" uid="uid://cufr4n72rnj8h" path="res://scenes/player.tscn" id="2_cbiko"]
 [ext_resource type="PackedScene" uid="uid://dk4dff4q5fd3c" path="res://scenes/broken_heart.tscn" id="3_8g4sg"]
+[ext_resource type="Script" path="res://scripts/SpeedLabel.gd" id="5_2qpbw"]
 [ext_resource type="Script" path="res://scripts/Timer.gd" id="5_x0ihl"]
+[ext_resource type="Script" path="res://scripts/ScoreLabel.gd" id="6_ynitl"]
+[ext_resource type="Script" path="res://scripts/Label.gd" id="8_0oufo"]
 
 [node name="main" type="Node2D"]
-script = ExtResource("1_h00ph")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 358.0
-offset_bottom = 77.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("1_sn41x")
-text = "SPREAD THE LOVE!"
-horizontal_alignment = 1
-vertical_alignment = 1
+script = ExtResource("1_ejnl7")
 
 [node name="player" parent="." instance=ExtResource("2_cbiko")]
 
 [node name="broken_heart" parent="." instance=ExtResource("3_8g4sg")]
 position = Vector2(30, 113)
 scale = Vector2(1.5, 1.5)
-move_speed = 256.0
-move_dir = Vector2(290, 0)
-
-[node name="broken_heart2" parent="." instance=ExtResource("3_8g4sg")]
-position = Vector2(30, 347)
-scale = Vector2(2, 2)
-move_speed = 64.0
+move_speed = 128.0
 move_dir = Vector2(290, 0)
 
 [node name="broken_heart3" parent="." instance=ExtResource("3_8g4sg")]
 position = Vector2(331, 231)
 scale = Vector2(1.75, 1.75)
-move_speed = 128.0
+move_speed = 64.0
 move_dir = Vector2(-290, 0)
+
+[node name="broken_heart2" parent="." instance=ExtResource("3_8g4sg")]
+position = Vector2(30, 347)
+scale = Vector2(2, 2)
+move_speed = 32.0
+move_dir = Vector2(290, 0)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
@@ -54,6 +45,56 @@ offset_bottom = 26.0
 theme_override_fonts/font = ExtResource("1_sn41x")
 text = "10"
 
+[node name="SpeedLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("1_sn41x")
+text = "Speed: "
+script = ExtResource("5_2qpbw")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 26.0
+offset_right = 42.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("1_sn41x")
+text = "Score: "
+script = ExtResource("6_ynitl")
+
+[node name="Pause" type="ColorRect" parent="."]
+process_mode = 2
+visible = false
+offset_right = 360.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Pause"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 358.0
+offset_bottom = 77.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_sn41x")
+text = "SPREAD THE LOVE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_0oufo")
+
+[node name="Button" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 488.0
+offset_right = 218.0
+offset_bottom = 517.0
+theme_override_fonts/font = ExtResource("1_sn41x")
+text = "START"
+icon_alignment = 1
+
 [connection signal="area_entered" from="broken_heart" to="broken_heart" method="_on_area_entered"]
-[connection signal="area_entered" from="broken_heart2" to="broken_heart2" method="_on_area_entered"]
 [connection signal="area_entered" from="broken_heart3" to="broken_heart3" method="_on_area_entered"]
+[connection signal="area_entered" from="broken_heart2" to="broken_heart2" method="_on_area_entered"]
+[connection signal="pressed" from="Pause/Button" to="." method="_on_button_pressed"]

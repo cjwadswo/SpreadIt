@@ -13,8 +13,8 @@
 [ext_resource type="FontFile" uid="uid://ctxvr2siy75fd" path="res://pixely_font.ttf" id="9_rsrex"]
 [ext_resource type="Script" path="res://scripts/Label.gd" id="10_k4ho5"]
 [ext_resource type="Script" path="res://scripts/Timer.gd" id="11_s5t42"]
-[ext_resource type="Script" path="res://scenes/SpeedLabel.gd" id="13_07pvn"]
-[ext_resource type="Script" path="res://scenes/ScoreLabel.gd" id="14_axm2p"]
+[ext_resource type="Script" path="res://scripts/SpeedLabel.gd" id="13_07pvn"]
+[ext_resource type="Script" path="res://scripts/ScoreLabel.gd" id="14_axm2p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2sqmc"]
 texture = ExtResource("4_33lhr")

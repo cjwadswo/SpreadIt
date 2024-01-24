@@ -1,16 +1,11 @@
-extends Node
+extends Label
 
-var score = 0
-var game_over = false
-var game_start = false
-var is_game_paused = false
-var speed = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	self.text = str("Speed: ",Global.speed)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if game_over == true:
-		print("game over")
+	pass
