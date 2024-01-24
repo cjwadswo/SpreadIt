@@ -21,7 +21,7 @@ func jump():
 	velocity.y = jump_force.y
 
 func game_over():
-	print("Game Over")
+	Global.game_over = true
 	position.y = floor
 	position.x = 0
 	velocity = Vector2.ZERO

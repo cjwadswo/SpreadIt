@@ -3,7 +3,7 @@ extends Node
 var pipe_scene_top = preload("res://scenes/pillar_top.tscn")
 var pipe_scene_bottom = preload("res://scenes/pillar_bottom.tscn")
 var pipe_timer = 0
-var pipe_spawn_interval = 0.5
+var pipe_spawn_interval = 0.5 * Global.speed
 
 func _process(delta):
 	pass
@@ -27,4 +27,20 @@ func spawn_pipe_bottom():
 	print("spawned pipe")
 	print(pipe_instance_bottom.position)
 	
+func game_won():
+	pass
+
+func _ready():
+	$Pause.visible = true
+	get_tree().paused = true
+
+
+func _on_button_pressed():
+	print("button pressed")
+	get_tree().paused = false
+	$Pause.visible = false
+
+func _on_heart_emitscore():
+	Global.score += 1
+	print("emit done")
 

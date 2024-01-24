@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://lvid1wa3lc3m"]
+[gd_scene load_steps=8 format=3 uid="uid://lvid1wa3lc3m"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_2ruiv"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_tjfbf"]
 [ext_resource type="Texture2D" uid="uid://3g5mpys3mll0" path="res://sprites/bird.png" id="3_yf0kg"]
+[ext_resource type="Script" path="res://scripts/Timer.gd" id="4_ai6pq"]
+[ext_resource type="FontFile" uid="uid://482hxaseeqp" path="res://pixely_font.ttf" id="4_uxjrv"]
+[ext_resource type="Script" path="res://scripts/Label.gd" id="5_ci04b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bsu1c"]
 radius = 32.1403
@@ -20,3 +23,45 @@ texture = ExtResource("3_yf0kg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 shape = SubResource("CircleShape2D_bsu1c")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+script = ExtResource("4_ai6pq")
+
+[node name="Label" type="Label" parent="Timer"]
+offset_left = 317.0
+offset_top = 3.0
+offset_right = 357.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("4_uxjrv")
+text = "10"
+
+[node name="Pause" type="ColorRect" parent="."]
+process_mode = 2
+offset_right = 360.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Pause"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 357.0
+offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("4_uxjrv")
+text = "SPREAD YOUR WINGS!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_ci04b")
+
+[node name="Button" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 488.0
+offset_right = 218.0
+offset_bottom = 517.0
+theme_override_fonts/font = ExtResource("4_uxjrv")
+text = "START"
+
+[connection signal="pressed" from="Pause/Button" to="." method="_on_button_pressed"]
