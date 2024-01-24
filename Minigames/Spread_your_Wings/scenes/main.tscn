@@ -15,6 +15,7 @@ position = Vector2(180, 260)
 script = ExtResource("2_tjfbf")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
+rotation = 0.584685
 texture = ExtResource("3_yf0kg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
