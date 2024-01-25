@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=3 uid="uid://cck1bkpdcakk2"]
+
+[ext_resource type="PackedScene" path="res://Minigames/Platformer/tile_map.tscn" id="1_srhl7"]
+[ext_resource type="Script" path="res://Minigames/Platformer/Player.gd" id="2_hn5k2"]
+[ext_resource type="Texture2D" uid="uid://c82o83g4aqnc" path="res://Minigames/Platformer/Sprites/Characters/Toast_Man1.png" id="3_sukt3"]
+[ext_resource type="Script" path="res://Minigames/Platformer/RisingWater.gd" id="7_2se5u"]
+[ext_resource type="Script" path="res://Minigames/Platformer/EndFlag.gd" id="7_a2310"]
+[ext_resource type="Texture2D" uid="uid://cop47aoytyxtb" path="res://Minigames/Platformer/Sprites/Sprites/Objects/tile_0112.png" id="8_ptxie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7vj0"]
+size = Vector2(22, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldga5"]
+size = Vector2(19, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_il8ja"]
+size = Vector2(126, 217)
+
+[sub_resource type="LabelSettings" id="LabelSettings_prcvg"]
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ba8i4"]
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-137, -17)
+zoom = Vector2(3, 3)
+
+[node name="TileMap" parent="." instance=ExtResource("1_srhl7")]
+scale = Vector2(0.5, 0.5)
+layer_0/tile_data = PackedInt32Array(-851990, 393216, 0, -786454, 393216, 0, -720918, 393216, 0, -655382, 393216, 0, -589846, 393216, 0, -524310, 393216, 0, -458774, 393216, 0, -393238, 393216, 0, -327702, 393216, 0, -262166, 393216, 0, -196630, 393216, 0, -131094, 393216, 0, -65558, 393216, 0, -22, 393216, 0, 65514, 393216, 0, 131050, 393216, 0, 196586, 393216, 0, 262122, 393216, 0, 327658, 393216, 0, 393194, 393216, 0, 458730, 393216, 0, 524266, 393216, 0, 589802, 393216, 0, 655338, 393216, 0, -851989, 393216, 0, 655339, 393216, 0, -851988, 393216, 0, 655340, 393216, 0, -851987, 393216, 0, 655341, 393216, 0, -851986, 393216, 0, 655342, 393216, 0, -851985, 393216, 0, 655343, 393216, 0, -851984, 393216, 0, 655344, 393216, 0, -851983, 393216, 0, 655345, 393216, 0, -851982, 393216, 0, 655346, 393216, 0, -851981, 393216, 0, 655347, 393216, 0, -851980, 393216, 0, 655348, 393216, 0, -851979, 393216, 0, 655349, 393216, 0, -851978, 393216, 0, 655350, 393216, 0, -851977, 393216, 0, -786441, 393216, 0, -720905, 393216, 0, -655369, 393216, 0, -589833, 393216, 0, -524297, 393216, 0, -458761, 393216, 0, -393225, 393216, 0, -327689, 393216, 0, -262153, 393216, 0, -196617, 393216, 0, -131081, 393216, 0, -65545, 393216, 0, -9, 393216, 0, 65527, 393216, 0, 131063, 393216, 0, 196599, 393216, 0, 262135, 393216, 0, 327671, 393216, 0, 393207, 393216, 0, 458743, 393216, 0, 524279, 393216, 0, 589815, 393216, 0, 655351, 393216, 0, 524269, 393216, 1, 524270, 393216, 1, -589841, 393216, 1, -589842, 393216, 1, -589843, 393216, 1, -589844, 393216, 1, -589845, 393216, 1, 393200, 393216, 1, 393201, 393216, 1, 262131, 393216, 1, 131061, 393216, 1, -14, 393216, 1, -131088, 393216, 1, -131089, 393216, 1, -262157, 393216, 1, -393227, 393216, 1, -393226, 393216, 1, -524302, 393216, 1, -524303, 393216, 1)
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
+position = Vector2(-179, 68)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_hn5k2")
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
+position = Vector2(52, 16)
+scale = Vector2(1.10938, 1.0625)
+texture = ExtResource("3_sukt3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_v7vj0")
+
+[node name="EndFlag" type="Area2D" parent="."]
+position = Vector2(-184, -94)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("7_a2310")
+
+[node name="Sprite" type="Sprite2D" parent="EndFlag"]
+texture = ExtResource("8_ptxie")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndFlag"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ldga5")
+
+[node name="RisingWater" type="Area2D" parent="."]
+position = Vector2(-198, 139)
+script = ExtResource("7_2se5u")
+move_speed = 40.0
+move_dir = Vector2(0, -260)
+
+[node name="ColorRect" type="ColorRect" parent="RisingWater"]
+offset_right = 126.0
+offset_bottom = 217.0
+color = Color(0.0588235, 0.368627, 0.611765, 0.513726)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RisingWater"]
+position = Vector2(63, 109)
+shape = SubResource("RectangleShape2D_il8ja")
+
+[node name="LoseText" type="Label" parent="."]
+visible = false
+offset_left = -188.0
+offset_top = -39.0
+offset_right = -82.0
+offset_bottom = -15.0
+text = "You Lose!"
+label_settings = SubResource("LabelSettings_prcvg")
+
+[node name="WinText" type="Label" parent="."]
+visible = false
+offset_left = -188.0
+offset_top = -39.0
+offset_right = -85.0
+offset_bottom = -15.0
+text = "YOU WIN!"
+label_settings = SubResource("LabelSettings_ba8i4")
+
+[connection signal="body_entered" from="EndFlag" to="EndFlag" method="_on_body_entered"]
+[connection signal="body_entered" from="RisingWater" to="RisingWater" method="_on_body_entered"]

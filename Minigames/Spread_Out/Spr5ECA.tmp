@@ -1,0 +1,127 @@
+[gd_scene load_steps=11 format=3 uid="uid://wmd12yahcqgr"]
+
+[ext_resource type="Script" path="res://Minigames/Spread_Out/Spread_Out_Minigame.gd" id="1_6365x"]
+[ext_resource type="PackedScene" uid="uid://c0sq3n0ak4kcj" path="res://Minigames/Spread_Out/area_circle.tscn" id="2_xbvk2"]
+[ext_resource type="PackedScene" uid="uid://d3fhdrpflwbm5" path="res://Minigames/Spread_Out/area_square.tscn" id="4_1irq1"]
+[ext_resource type="PackedScene" uid="uid://chsc0tf1uytta" path="res://Minigames/Spread_Out/square.tscn" id="4_p3j3e"]
+[ext_resource type="PackedScene" uid="uid://c6w8llo402wyi" path="res://Minigames/Spread_Out/triangle.tscn" id="5_j2hpk"]
+[ext_resource type="PackedScene" uid="uid://s4htdwj0gw8w" path="res://Minigames/Spread_Out/circle.tscn" id="5_w8y3q"]
+[ext_resource type="PackedScene" uid="uid://b74uop864jp1f" path="res://Minigames/Spread_Out/area_triangle.tscn" id="8_d0pdb"]
+
+[sub_resource type="FontFile" id="FontFile_mtw10"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/12/0 = Vector2(0, 0)
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/15/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/12/0 = Vector2(0, 0)
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/14/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/12/0 = Vector2(0, 0)
+cache/0/13/0/ascent = 0.0
+cache/0/13/0/descent = 0.0
+cache/0/13/0/underline_position = 0.0
+cache/0/13/0/underline_thickness = 0.0
+cache/0/13/0/scale = 1.0
+cache/0/13/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/12/0 = Vector2(0, 0)
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/12/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/12/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3lbbm"]
+line_spacing = 1.0
+font = SubResource("FontFile_mtw10")
+font_size = 12
+outline_size = 4
+outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5pbsm"]
+font_size = 28
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Spread_Out_Minigame" type="Node2D"]
+script = ExtResource("1_6365x")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="area_circle" parent="." groups=["Circle"] instance=ExtResource("2_xbvk2")]
+position = Vector2(-37, 9)
+scale = Vector2(2, 2)
+
+[node name="area_square" parent="." groups=["Square"] instance=ExtResource("4_1irq1")]
+position = Vector2(40, 10)
+scale = Vector2(2, 2)
+
+[node name="area_triangle" parent="." groups=["Triangle"] instance=ExtResource("8_d0pdb")]
+position = Vector2(72, -81)
+scale = Vector2(2, 2)
+
+[node name="Circle" parent="." groups=["Circle"] instance=ExtResource("5_w8y3q")]
+position = Vector2(20, -65)
+scale = Vector2(2, 2)
+
+[node name="Square" parent="." groups=["Square"] instance=ExtResource("4_p3j3e")]
+position = Vector2(-3, -32)
+scale = Vector2(2, 2)
+
+[node name="Triangle" parent="." groups=["Triangle"] instance=ExtResource("5_j2hpk")]
+position = Vector2(-25, -68)
+scale = Vector2(2, 2)
+
+[node name="WonText" type="Label" parent="."]
+visible = false
+offset_left = -86.0
+offset_top = -69.0
+offset_right = -21.0
+offset_bottom = -43.0
+scale = Vector2(3.28, 3.08)
+text = "You won!"
+label_settings = SubResource("LabelSettings_3lbbm")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="MinigameText" type="Label" parent="."]
+visible = false
+offset_left = -50.0
+offset_top = -54.0
+offset_right = 74.0
+offset_bottom = 44.0
+text = "Spread
+Them!"
+label_settings = SubResource("LabelSettings_5pbsm")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byoux366sicdb"
-path="res://.godot/imported/player_sprite.png-419ce3799b047adbb1968c614654b682.ctex"
+uid="uid://b7tedl5hi8m42"
+path="res://.godot/imported/Toast_Man3.png-c4f0b758155ba056cd63b451cd1aa177.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/player_sprite.png"
-dest_files=["res://.godot/imported/player_sprite.png-419ce3799b047adbb1968c614654b682.ctex"]
+source_file="res://Minigames/Platformer/Sprites/Characters/Toast_Man3.png"
+dest_files=["res://.godot/imported/Toast_Man3.png-c4f0b758155ba056cd63b451cd1aa177.ctex"]
 
 [params]
 
