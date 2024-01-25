@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1l7xntueq51i"]
+
+[ext_resource type="PackedScene" uid="uid://cck1bkpdcakk2" path="res://Minigames/Platformer/Level1.tscn" id="2_udm6r"]
+
+[node name="Platformer" type="Node2D"]
+
+[node name="Main" parent="." instance=ExtResource("2_udm6r")]
+position = Vector2(163, -1)

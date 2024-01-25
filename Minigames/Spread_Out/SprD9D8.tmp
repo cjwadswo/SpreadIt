@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://wmd12yahcqgr"]
+[gd_scene load_steps=14 format=3 uid="uid://wmd12yahcqgr"]
 
 [ext_resource type="Script" path="res://Minigames/Spread_Out/Spread_Out_Minigame.gd" id="1_6365x"]
 [ext_resource type="PackedScene" uid="uid://c0sq3n0ak4kcj" path="res://Minigames/Spread_Out/area_circle.tscn" id="2_xbvk2"]
@@ -9,12 +9,6 @@
 [ext_resource type="Script" path="res://Minigames/Spread_Out/Mini_game_timer.gd" id="8_4tmaa"]
 [ext_resource type="PackedScene" uid="uid://b74uop864jp1f" path="res://Minigames/Spread_Out/area_triangle.tscn" id="8_d0pdb"]
 [ext_resource type="Script" path="res://Minigames/Spread_Out/Transitions.gd" id="9_li7ca"]
-[ext_resource type="Texture2D" uid="uid://6nmi7340woxa" path="res://MainMenu/butter_knife.png" id="10_8o7ca"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_4efak"]
-font_size = 28
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_5pbsm"]
 font_size = 28
@@ -32,7 +26,7 @@ tracks/0/path = NodePath("TextureRect:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0.1, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -45,7 +39,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 5.27803),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 0.941176, 0.478431, 1), Color(1, 0.941176, 0.478431, 0)]
 }
@@ -55,30 +49,8 @@ _data = {
 "Fade_in": SubResource("Animation_7ax0f")
 }
 
-[sub_resource type="Animation" id="Animation_81gi7"]
-resource_name = "Move down"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 0.933033),
-"update": 0,
-"values": [Vector2(0, -3.045), Vector2(0, 700)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_x6ciy"]
-_data = {
-"Move down": SubResource("Animation_81gi7")
-}
-
-[node name="Spread_Out_Minigame" type="Node2D" node_paths=PackedStringArray("transitioner")]
-position = Vector2(1, -1)
+[node name="Spread_Out_Minigame" type="Node2D"]
 script = ExtResource("1_6365x")
-transitioner = NodePath("Transitions")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -109,14 +81,13 @@ scale = Vector2(2, 2)
 
 [node name="WonText" type="Label" parent="."]
 visible = false
-offset_left = -80.0
-offset_top = -69.0
-offset_right = 12.0
-offset_bottom = 15.0
+offset_left = -56.0
+offset_top = -67.0
+offset_right = 10.0
+offset_bottom = 17.0
 scale = Vector2(1.82303, 1.32612)
 text = "YOU
 WON!"
-label_settings = SubResource("LabelSettings_4efak")
 
 [node name="MinigameText" type="Label" parent="."]
 offset_left = -50.0
@@ -147,7 +118,7 @@ offset_bottom = 40.0
 script = ExtResource("9_li7ca")
 
 [node name="TextureRect" type="TextureRect" parent="Transitions"]
-modulate = Color(1, 0.941176, 0.478431, 0.2)
+modulate = Color(1, 0.941176, 0.478431, 1)
 layout_mode = 0
 offset_left = -90.0
 offset_top = -161.0
@@ -160,25 +131,6 @@ texture = SubResource("CanvasTexture_d6rcr")
 libraries = {
 "": SubResource("AnimationLibrary_i0su1")
 }
-
-[node name="Transition" type="ColorRect" parent="."]
-offset_left = -89.0
-offset_top = -165.0
-offset_right = 273.0
-offset_bottom = 126.0
-scale = Vector2(0.501343, -1.10295)
-color = Color(1, 1, 0.631373, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
-libraries = {
-"": SubResource("AnimationLibrary_x6ciy")
-}
-
-[node name="ButterKnife" type="Sprite2D" parent="Transition"]
-position = Vector2(179.216, 15.2461)
-rotation = 1.57422
-scale = Vector2(1.01901, -2.83032)
-texture = ExtResource("10_8o7ca")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Mini_game_timer" to="Mini_game_timer" method="_on_timeout"]

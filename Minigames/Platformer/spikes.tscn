@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cptqihrh3wvhx"]
+
+[ext_resource type="Script" path="res://Minigames/Platformer/Spikes.gd" id="1_tpbx0"]
+[ext_resource type="Texture2D" uid="uid://bj4phc7ceh37p" path="res://Minigames/Platformer/Sprites/Objects/tile_0068.png" id="2_p5886"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rprpr"]
+size = Vector2(14, 6.5)
+
+[node name="Spikes" type="Area2D"]
+script = ExtResource("1_tpbx0")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_p5886")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.75)
+shape = SubResource("RectangleShape2D_rprpr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://2a7hjhb8mmci"]
+
+[ext_resource type="Script" path="res://Minigames/Platformer/Coin.gd" id="1_q0r6l"]
+[ext_resource type="Texture2D" uid="uid://ydbe1tyhvygu" path="res://Minigames/Platformer/Sprites/Sprites/Objects/tile_0151.png" id="2_baa0w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_um4sw"]
+radius = 7.07107
+
+[node name="Coin" type="Area2D"]
+script = ExtResource("1_q0r6l")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_baa0w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_um4sw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

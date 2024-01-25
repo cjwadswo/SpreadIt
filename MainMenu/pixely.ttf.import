@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bg5307umn3qt5"
-path="res://.godot/imported/pixely[1].ttf-229157bf72b04017cf36f22309ec4009.fontdata"
+uid="uid://do67eer324h6c"
+path="res://.godot/imported/pixely.ttf-01358bfe1e17b8fdfd66a21612bacfb5.fontdata"
 
 [deps]
 
-source_file="res://Minigames/pixely[1].ttf"
-dest_files=["res://.godot/imported/pixely[1].ttf-229157bf72b04017cf36f22309ec4009.fontdata"]
+source_file="res://MainMenu/pixely.ttf"
+dest_files=["res://.godot/imported/pixely.ttf-01358bfe1e17b8fdfd66a21612bacfb5.fontdata"]
 
 [params]
 

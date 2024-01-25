@@ -1,6 +1,6 @@
 [gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://da4ntq02y2thd"]
 
-[ext_resource type="FontFile" uid="uid://bg5307umn3qt5" path="res://Minigames/pixely[1].ttf" id="1_wj28n"]
+[ext_resource type="FontFile" uid="uid://bg5307umn3qt5" path="res://pixely[1].ttf" id="1_wj28n"]
 
 [resource]
 base_font = ExtResource("1_wj28n")
