@@ -36,7 +36,7 @@ func _ready():
 	elif Global.speed == 3.0:
 		bow_speed = 0.75
 		print(bow_speed)
-	elif Global.speed == 4.0:
+	elif Global.speed > 3.0:
 		bow_speed = 0.5
 		print(bow_speed)
 

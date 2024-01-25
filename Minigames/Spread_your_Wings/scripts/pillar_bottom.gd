@@ -8,4 +8,3 @@ func _process(delta):
 	if position.x < -300:
 		position.x = randf_range(400, 600)
 		position.y = randf_range(525, 700)
-		print(position)

@@ -1,5 +1,7 @@
 extends Node
 
+@export var next_scene = "res://scenes/main.tscn"
+
 var score = 0
 var game_over = false
 var game_start = false
@@ -13,4 +15,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if game_over == true:
-		pass
+		get_tree().change_scene_to_file(next_scene)

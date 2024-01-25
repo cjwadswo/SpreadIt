@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://lvid1wa3lc3m"]
+[gd_scene load_steps=9 format=3 uid="uid://lvid1wa3lc3m"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_2ruiv"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_tjfbf"]
 [ext_resource type="Texture2D" uid="uid://3g5mpys3mll0" path="res://sprites/bird.png" id="3_yf0kg"]
 [ext_resource type="Script" path="res://scripts/Timer.gd" id="4_ai6pq"]
+[ext_resource type="Texture2D" uid="uid://ctxptk0lvwae8" path="res://sprites/bird_flap.png" id="4_o6a45"]
 [ext_resource type="FontFile" uid="uid://482hxaseeqp" path="res://pixely_font.ttf" id="4_uxjrv"]
 [ext_resource type="Script" path="res://scripts/Label.gd" id="5_ci04b"]
 
@@ -20,6 +21,11 @@ script = ExtResource("2_tjfbf")
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 rotation = 0.584685
 texture = ExtResource("3_yf0kg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="player"]
+visible = false
+rotation = 0.584685
+texture = ExtResource("4_o6a45")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 shape = SubResource("CircleShape2D_bsu1c")
@@ -39,6 +45,7 @@ text = "10"
 
 [node name="Pause" type="ColorRect" parent="."]
 process_mode = 2
+visible = false
 offset_right = 360.0
 offset_bottom = 640.0
 color = Color(0, 0, 0, 1)
