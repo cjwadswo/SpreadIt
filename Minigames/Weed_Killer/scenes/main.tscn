@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dou2henr0qryf"]
+[gd_scene load_steps=28 format=3 uid="uid://dou2henr0qryf"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ognl5"]
 [ext_resource type="Texture2D" uid="uid://bxbn83chtuxye" path="res://sprites/fliower_sheet.png" id="2_ysujx"]
@@ -11,7 +11,6 @@
 [ext_resource type="AudioStream" uid="uid://d3gyjxws3fsb" path="res://sounds/music.mp3" id="6_rf8jr"]
 [ext_resource type="Script" path="res://scripts/flower.gd" id="7_qmp0j"]
 [ext_resource type="FontFile" uid="uid://ctxvr2siy75fd" path="res://pixely_font.ttf" id="9_rsrex"]
-[ext_resource type="Script" path="res://scripts/Label.gd" id="10_k4ho5"]
 [ext_resource type="Script" path="res://scripts/Timer.gd" id="11_s5t42"]
 [ext_resource type="Script" path="res://scripts/SpeedLabel.gd" id="13_07pvn"]
 [ext_resource type="Script" path="res://scripts/ScoreLabel.gd" id="14_axm2p"]
@@ -115,13 +114,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6qq0"]
 size = Vector2(66, 85)
-
-[sub_resource type="LabelSettings" id="LabelSettings_hkswq"]
-font = ExtResource("9_rsrex")
-font_size = 32
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 0
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ognl5")
@@ -325,47 +317,6 @@ theme_override_fonts/font = ExtResource("9_rsrex")
 text = "Score: "
 script = ExtResource("14_axm2p")
 
-[node name="Pause" type="ColorRect" parent="."]
-process_mode = 2
-visible = false
-offset_right = 360.0
-offset_bottom = 640.0
-color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="Pause"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -132.0
-offset_top = -268.0
-offset_right = 138.0
-offset_bottom = -46.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(135, 21)
-size_flags_horizontal = 4
-text = "Weeds
-are
-Spreading!
-
-Cut them!"
-label_settings = SubResource("LabelSettings_hkswq")
-horizontal_alignment = 1
-vertical_alignment = 2
-script = ExtResource("10_k4ho5")
-
-[node name="Button" type="Button" parent="Pause"]
-layout_mode = 0
-offset_left = 136.0
-offset_top = 488.0
-offset_right = 218.0
-offset_bottom = 517.0
-theme_override_fonts/font = ExtResource("9_rsrex")
-text = "START"
-
 [connection signal="emitscore" from="Flower" to="." method="_on_flower_emitscore"]
 [connection signal="emitscore" from="Flower2" to="." method="_on_flower_emitscore"]
 [connection signal="emitscore" from="Flower3" to="." method="_on_flower_emitscore"]
@@ -376,4 +327,3 @@ text = "START"
 [connection signal="emitscore" from="Flower8" to="." method="_on_flower_emitscore"]
 [connection signal="emitscore" from="Flower9" to="." method="_on_flower_emitscore"]
 [connection signal="timeout" from="Weed_Generator/Timer" to="Weed_Generator" method="_on_timer_timeout"]
-[connection signal="pressed" from="Pause/Button" to="." method="_on_button_pressed"]

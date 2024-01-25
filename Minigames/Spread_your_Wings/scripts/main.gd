@@ -27,9 +27,5 @@ func game_won():
 
 func _ready():
 	Global.game_over = false
-	$Pause.visible = true
-	get_tree().paused = true
 
-func _on_button_pressed():
-	get_tree().paused = false
-	$Pause.visible = false
+
