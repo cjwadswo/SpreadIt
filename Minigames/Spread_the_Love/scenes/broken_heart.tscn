@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://dk4dff4q5fd3c"]
+
+[ext_resource type="Script" path="res://scripts/broken_heart.gd" id="1_txqn8"]
+[ext_resource type="Texture2D" uid="uid://wso6e4eqbo84" path="res://sprites/broken_heart.png" id="2_7touy"]
+[ext_resource type="FontFile" uid="uid://b4am8e5yrtwmg" path="res://pixely_font.ttf" id="3_43inq"]
+[ext_resource type="Texture2D" uid="uid://xy2qte8d6emb" path="res://sprites/full_heart.png" id="4_8iaar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10j1p"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pey7n"]
+atlas = ExtResource("4_8iaar")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6vp7"]
+atlas = ExtResource("4_8iaar")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1q54"]
+atlas = ExtResource("4_8iaar")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdte2"]
+atlas = ExtResource("4_8iaar")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_01gqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pey7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6vp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1q54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdte2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="broken_heart" type="Area2D"]
+script = ExtResource("1_txqn8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7touy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_10j1p")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 6.0
+offset_top = -5.0
+offset_right = 46.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("3_43inq")
+text = "3"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_01gqn")
+autoplay = "default"

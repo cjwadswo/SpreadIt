@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cufr4n72rnj8h"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_hatbp"]
+[ext_resource type="Texture2D" uid="uid://b1wdcca1c6q82" path="res://sprites/cupid.png" id="2_b8331"]
+[ext_resource type="Texture2D" uid="uid://xhslt48kv18b" path="res://sprites/bow.png" id="3_ilrn4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tpqk"]
+size = Vector2(128, 128)
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(66, 574)
+script = ExtResource("1_hatbp")
+move_speed = 64.0
+move_dir = Vector2(230, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("2_b8331")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2tpqk")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -64)
+
+[node name="bow_sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_ilrn4")

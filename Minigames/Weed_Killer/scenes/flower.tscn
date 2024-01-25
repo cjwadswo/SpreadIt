@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://d36ky7dganqmb"]
+
+[ext_resource type="Script" path="res://scripts/flower.gd" id="1_wllj4"]
+[ext_resource type="Texture2D" uid="uid://bxbn83chtuxye" path="res://sprites/fliower_sheet.png" id="2_u8pr0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py7v2"]
+atlas = ExtResource("2_u8pr0")
+region = Rect2(0, 0, 72, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yman0"]
+atlas = ExtResource("2_u8pr0")
+region = Rect2(72, 0, 72, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2sbm"]
+atlas = ExtResource("2_u8pr0")
+region = Rect2(144, 0, 72, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w64ir"]
+atlas = ExtResource("2_u8pr0")
+region = Rect2(216, 0, 72, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hepa"]
+atlas = ExtResource("2_u8pr0")
+region = Rect2(288, 0, 72, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26jm2"]
+atlas = ExtResource("2_u8pr0")
+region = Rect2(360, 0, 72, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2h4u2"]
+atlas = ExtResource("2_u8pr0")
+region = Rect2(432, 0, 72, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ir2q"]
+atlas = ExtResource("2_u8pr0")
+region = Rect2(504, 0, 72, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhtxs"]
+atlas = ExtResource("2_u8pr0")
+region = Rect2(576, 0, 72, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tdff2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py7v2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yman0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2sbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w64ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hepa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26jm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2h4u2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ir2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhtxs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6qq0"]
+size = Vector2(66, 85)
+
+[node name="Flower" type="Area2D"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+position = Vector2(176, 332)
+collision_layer = 0
+script = ExtResource("1_wllj4")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tdff2")
+frame_progress = 0.0656753
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_s6qq0")
