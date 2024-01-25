@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cr3w1jcbqjvjf"]
+[gd_scene load_steps=8 format=3 uid="uid://cr3w1jcbqjvjf"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ejnl7"]
 [ext_resource type="FontFile" uid="uid://b4am8e5yrtwmg" path="res://pixely_font.ttf" id="1_sn41x"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://scripts/SpeedLabel.gd" id="5_2qpbw"]
 [ext_resource type="Script" path="res://scripts/Timer.gd" id="5_x0ihl"]
 [ext_resource type="Script" path="res://scripts/ScoreLabel.gd" id="6_ynitl"]
-[ext_resource type="Script" path="res://scripts/Label.gd" id="8_0oufo"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ejnl7")
@@ -63,38 +62,6 @@ theme_override_fonts/font = ExtResource("1_sn41x")
 text = "Score: "
 script = ExtResource("6_ynitl")
 
-[node name="Pause" type="ColorRect" parent="."]
-process_mode = 2
-visible = false
-offset_right = 360.0
-offset_bottom = 640.0
-color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="Pause"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 358.0
-offset_bottom = 77.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("1_sn41x")
-text = "SPREAD THE LOVE!"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("8_0oufo")
-
-[node name="Button" type="Button" parent="Pause"]
-layout_mode = 0
-offset_left = 136.0
-offset_top = 488.0
-offset_right = 218.0
-offset_bottom = 517.0
-theme_override_fonts/font = ExtResource("1_sn41x")
-text = "START"
-icon_alignment = 1
-
 [connection signal="area_entered" from="broken_heart" to="broken_heart" method="_on_area_entered"]
 [connection signal="area_entered" from="broken_heart3" to="broken_heart3" method="_on_area_entered"]
 [connection signal="area_entered" from="broken_heart2" to="broken_heart2" method="_on_area_entered"]
-[connection signal="pressed" from="Pause/Button" to="." method="_on_button_pressed"]

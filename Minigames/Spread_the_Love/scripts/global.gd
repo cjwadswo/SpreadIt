@@ -6,7 +6,7 @@ var score = 0
 var game_over = false
 var game_start = false
 var is_game_paused = false
-var speed = 1.0
+var speed = 4.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
