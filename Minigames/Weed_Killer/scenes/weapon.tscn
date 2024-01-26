@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dot15e1bdptgn"]
 
-[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_gkfgs"]
-[ext_resource type="Texture2D" uid="uid://cly6l2e7i1tgx" path="res://sprites/scythe_sprite.png" id="2_fmtfl"]
+[ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/weapon.gd" id="1_gkfgs"]
+[ext_resource type="Texture2D" uid="uid://cly6l2e7i1tgx" path="res://Minigames/Weed_Killer/sprites/scythe_sprite.png" id="2_fmtfl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvky0"]
 size = Vector2(123, 35)

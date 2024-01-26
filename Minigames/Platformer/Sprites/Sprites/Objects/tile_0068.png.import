@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byoux366sicdb"
-path="res://.godot/imported/player_sprite.png-419ce3799b047adbb1968c614654b682.ctex"
+uid="uid://bj4phc7ceh37p"
+path="res://.godot/imported/tile_0068.png-cd86c3ea01549395b6d83b25ba11aa51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/player_sprite.png"
-dest_files=["res://.godot/imported/player_sprite.png-419ce3799b047adbb1968c614654b682.ctex"]
+source_file="res://Minigames/Platformer/Sprites/Sprites/Objects/tile_0068.png"
+dest_files=["res://.godot/imported/tile_0068.png-cd86c3ea01549395b6d83b25ba11aa51.ctex"]
 
 [params]
 

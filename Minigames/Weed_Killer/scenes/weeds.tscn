@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cs0jxye6epk82"]
 
-[ext_resource type="Script" path="res://scripts/weeds.gd" id="1_rhts6"]
-[ext_resource type="Texture2D" uid="uid://cqoah8mbejab2" path="res://sprites/weed_sprite.png" id="2_rqrls"]
-[ext_resource type="AudioStream" uid="uid://o4j42ej5hirx" path="res://sounds/cut.mp3" id="3_k1irs"]
+[ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/weeds.gd" id="1_rhts6"]
+[ext_resource type="Texture2D" uid="uid://cqoah8mbejab2" path="res://Minigames/Weed_Killer/sprites/weed_sprite.png" id="2_rqrls"]
+[ext_resource type="AudioStream" uid="uid://o4j42ej5hirx" path="res://Minigames/Weed_Killer/sounds/cut.mp3" id="3_k1irs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0y8m"]
 size = Vector2(32, 128)

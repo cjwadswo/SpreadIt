@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cly6l2e7i1tgx"
-path="res://.godot/imported/scythe_sprite.png-cdceae9b367733afd9b2a589f330dc6f.ctex"
+path="res://.godot/imported/scythe_sprite.png-5e21c4f6abe8db5248f3dbdb059ec641.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scythe_sprite.png"
-dest_files=["res://.godot/imported/scythe_sprite.png-cdceae9b367733afd9b2a589f330dc6f.ctex"]
+source_file="res://Minigames/Weed_Killer/sprites/scythe_sprite.png"
+dest_files=["res://.godot/imported/scythe_sprite.png-5e21c4f6abe8db5248f3dbdb059ec641.ctex"]
 
 [params]
 

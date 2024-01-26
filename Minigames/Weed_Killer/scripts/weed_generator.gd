@@ -1,6 +1,6 @@
 extends Node
 
-@export var weed_scene = preload("res://scenes/weeds.tscn")
+@export var weed_scene = preload("res://Minigames/Weed_Killer/scenes/weeds.tscn")
 @export var weed_count = 50 * Global.speed
 var node_count
 

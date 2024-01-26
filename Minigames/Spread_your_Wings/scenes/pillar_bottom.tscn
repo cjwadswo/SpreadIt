@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhudhjifjqi2s"]
 
-[ext_resource type="Script" path="res://scripts/pillar_bottom.gd" id="1_v7c20"]
-[ext_resource type="Texture2D" uid="uid://4sfgyttjittb" path="res://sprites/pillar.png" id="2_w2awa"]
+[ext_resource type="Script" path="res://Minigames/Spread_your_Wings/scripts/pillar_bottom.gd" id="1_v7c20"]
+[ext_resource type="Texture2D" uid="uid://4sfgyttjittb" path="res://Minigames/Spread_your_Wings/sprites/pillar.png" id="2_w2awa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ug0h1"]
 size = Vector2(40, 253)

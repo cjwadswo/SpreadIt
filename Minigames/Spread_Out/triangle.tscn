@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6w8llo402wyi"]
+
+[ext_resource type="PackedScene" uid="uid://s4htdwj0gw8w" path="res://Minigames/Spread_Out/shapes.tscn" id="1_kf0qq"]
+[ext_resource type="Texture2D" uid="uid://d1ia07fw37vbn" path="res://Minigames/Spread_Out/Sprites/player_sprite_triangle_happy.png" id="2_76lpd"]
+[ext_resource type="Texture2D" uid="uid://bf0b7svm1hiuw" path="res://Minigames/Spread_Out/Sprites/player_sprite_triangle_angry.png" id="2_se3gs"]
+
+[node name="Triangle" groups=["Triangle"] instance=ExtResource("1_kf0qq")]
+
+[node name="Area2D" parent="." index="0" groups=["Triangle"]]
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-2, 1)
+
+[node name="HappySprite" parent="Area2D" index="1"]
+texture = ExtResource("2_76lpd")
+
+[node name="AngrySprite" parent="Area2D" index="2"]
+texture = ExtResource("2_se3gs")

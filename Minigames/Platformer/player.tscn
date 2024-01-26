@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2vno540kf6b3"]
+
+[ext_resource type="Script" path="res://Minigames/Platformer/Player.gd" id="1_2kv14"]
+[ext_resource type="Texture2D" uid="uid://cdqw5kifbyiuj" path="res://Minigames/Platformer/Sprites/Characters/character_0006.png" id="2_cpb4x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7s1b2"]
+radius = 8.0
+height = 22.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_wkb8d"]
+font_size = 32
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+position = Vector2(-145, -17)
+script = ExtResource("1_2kv14")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_cpb4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7s1b2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(8, 0)
+zoom = Vector2(3, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreText" type="Label" parent="CanvasLayer"]
+offset_left = 9.0
+offset_top = -8.0
+offset_right = 130.0
+offset_bottom = 40.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_wkb8d")

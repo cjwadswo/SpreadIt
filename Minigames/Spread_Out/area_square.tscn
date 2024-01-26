@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3fhdrpflwbm5"]
+
+[ext_resource type="PackedScene" uid="uid://dwep8htre4rqk" path="res://Minigames/Spread_Out/drop_area.tscn" id="1_y540u"]
+[ext_resource type="Texture2D" uid="uid://clw5kj44sba4m" path="res://Minigames/Spread_Out/Sprites/area_square.png" id="2_cgjqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vhvs"]
+size = Vector2(12, 12)
+
+[node name="area_square" instance=ExtResource("1_y540u")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_4vhvs")
+
+[node name="AreaCircle" parent="." index="1"]
+texture = ExtResource("2_cgjqv")

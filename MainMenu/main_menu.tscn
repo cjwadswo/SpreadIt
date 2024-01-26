@@ -1,0 +1,183 @@
+[gd_scene load_steps=13 format=3 uid="uid://dge4ubxujl2ml"]
+
+[ext_resource type="FontFile" uid="uid://do67eer324h6c" path="res://MainMenu/pixely.ttf" id="1_2he5b"]
+[ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="2_g6vbt"]
+[ext_resource type="Script" path="res://title.gd" id="3_uques"]
+[ext_resource type="Script" path="res://fade_to_black.gd" id="4_ginrb"]
+[ext_resource type="Texture2D" uid="uid://6nmi7340woxa" path="res://MainMenu/butter_knife.png" id="5_inbof"]
+
+[sub_resource type="Theme" id="Theme_lmjqk"]
+default_font = ExtResource("1_2he5b")
+
+[sub_resource type="LabelSettings" id="LabelSettings_fxagk"]
+font = ExtResource("1_2he5b")
+font_size = 32
+
+[sub_resource type="Animation" id="Animation_8opfg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mkmll"]
+resource_name = "fade_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1dwqy"]
+_data = {
+"RESET": SubResource("Animation_8opfg"),
+"fade_to_black": SubResource("Animation_mkmll")
+}
+
+[sub_resource type="Animation" id="Animation_81gi7"]
+resource_name = "Move down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 0.933033),
+"update": 0,
+"values": [Vector2(0, -3.045), Vector2(0, 700)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x6ciy"]
+_data = {
+"Move down": SubResource("Animation_81gi7")
+}
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_lmjqk")
+script = ExtResource("2_g6vbt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 640.0
+color = Color(0.0941176, 0.180392, 0.278431, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Spread Ware
+-
+minigun games"
+label_settings = SubResource("LabelSettings_fxagk")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_uques")
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../QuitGame")
+focus_neighbor_bottom = NodePath("../QuitGame")
+focus_next = NodePath("../QuitGame")
+focus_previous = NodePath("../QuitGame")
+theme_override_fonts/font = ExtResource("1_2he5b")
+text = "Start Game"
+
+[node name="QuitGame" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../StartGame")
+focus_neighbor_bottom = NodePath("../StartGame")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+theme_override_fonts/font = ExtResource("1_2he5b")
+text = "Quit"
+
+[node name="FadetoBlack" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("4_ginrb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadetoBlack"]
+libraries = {
+"": SubResource("AnimationLibrary_1dwqy")
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1, 1.00488)
+
+[node name="Transition" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 369.0
+offset_bottom = 632.001
+scale = Vector2(0.981343, -1.10295)
+color = Color(1, 1, 0.631373, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
+libraries = {
+"": SubResource("AnimationLibrary_x6ciy")
+}
+
+[node name="ButterKnife" type="Sprite2D" parent="Transition"]
+position = Vector2(179.216, 15.2461)
+rotation = 1.57422
+scale = Vector2(1.01901, -2.83032)
+texture = ExtResource("5_inbof")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/QuitGame" to="." method="_on_quit_game_pressed"]
+[connection signal="transition_complete" from="FadetoBlack" to="." method="_on_fadeto_black_transition_complete"]
+[connection signal="animation_finished" from="FadetoBlack/AnimationPlayer" to="FadetoBlack" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Transition/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

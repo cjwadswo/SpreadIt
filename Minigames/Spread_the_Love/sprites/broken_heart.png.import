@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wso6e4eqbo84"
-path="res://.godot/imported/broken_heart.png-306a92ab44f554349f0c08fa985225f8.ctex"
+path="res://.godot/imported/broken_heart.png-f1b363d80004d0d06164888ac00723c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/broken_heart.png"
-dest_files=["res://.godot/imported/broken_heart.png-306a92ab44f554349f0c08fa985225f8.ctex"]
+source_file="res://Minigames/Spread_the_Love/sprites/broken_heart.png"
+dest_files=["res://.godot/imported/broken_heart.png-f1b363d80004d0d06164888ac00723c7.ctex"]
 
 [params]
 

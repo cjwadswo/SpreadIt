@@ -1,16 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://clke8ycmj5j82"]
+[gd_scene load_steps=4 format=3 uid="uid://dwep8htre4rqk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_75145"]
-size = Vector2(32, 32)
+[ext_resource type="Script" path="res://Minigames/Spread_Out/dropArea.gd" id="1_e6ucg"]
+[ext_resource type="Texture2D" uid="uid://byoux366sicdb" path="res://Minigames/Spread_Out/Sprites/area_circle.png" id="2_ikga8"]
 
-[node name="Drop_Area" type="StaticBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_xh0q3"]
+radius = 7.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
-color = Color(0.443137, 0.443137, 0.443137, 1)
+[node name="area_circle" type="Area2D"]
+script = ExtResource("1_e6ucg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_75145")
+shape = SubResource("CircleShape2D_xh0q3")
+debug_color = Color(0.984314, 0, 0.345098, 1)
+
+[node name="AreaCircle" type="Sprite2D" parent="."]
+texture = ExtResource("2_ikga8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

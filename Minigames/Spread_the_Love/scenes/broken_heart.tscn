@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://dk4dff4q5fd3c"]
 
-[ext_resource type="Script" path="res://scripts/broken_heart.gd" id="1_txqn8"]
-[ext_resource type="Texture2D" uid="uid://wso6e4eqbo84" path="res://sprites/broken_heart.png" id="2_7touy"]
-[ext_resource type="FontFile" uid="uid://b4am8e5yrtwmg" path="res://pixely_font.ttf" id="3_43inq"]
-[ext_resource type="Texture2D" uid="uid://xy2qte8d6emb" path="res://sprites/full_heart.png" id="4_8iaar"]
+[ext_resource type="Script" path="res://Minigames/Spread_the_Love/scripts/broken_heart.gd" id="1_txqn8"]
+[ext_resource type="Texture2D" uid="uid://wso6e4eqbo84" path="res://Minigames/Spread_the_Love/sprites/broken_heart.png" id="2_7touy"]
+[ext_resource type="FontFile" uid="uid://b4am8e5yrtwmg" path="res://Minigames/Spread_the_Love/pixely_font.ttf" id="3_43inq"]
+[ext_resource type="Texture2D" uid="uid://xy2qte8d6emb" path="res://Minigames/Spread_the_Love/sprites/full_heart.png" id="4_8iaar"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_10j1p"]
 size = Vector2(32, 32)

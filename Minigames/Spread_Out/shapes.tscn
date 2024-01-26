@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://s4htdwj0gw8w"]
+
+[ext_resource type="Script" path="res://Minigames/Spread_Out/dragable.gd" id="1_8ap3i"]
+[ext_resource type="Texture2D" uid="uid://bkqrtha1irvab" path="res://Minigames/Spread_Out/Sprites/player_sprite_circle_happy.png" id="2_h8wrs"]
+[ext_resource type="Texture2D" uid="uid://bgbc8x2licc1l" path="res://Minigames/Spread_Out/Sprites/player_sprite_circle_angry.png" id="3_0t1bb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7blt5"]
+radius = 7.07107
+
+[node name="Circle" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_8ap3i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7blt5")
+debug_color = Color(0.768627, 0.227451, 0.933333, 0.419608)
+
+[node name="HappySprite" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("2_h8wrs")
+
+[node name="AngrySprite" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("3_0t1bb")
+
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]

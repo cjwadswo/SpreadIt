@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b4am8e5yrtwmg"
-path="res://.godot/imported/pixely_font.ttf-74fd5cdb30350bfd76715aab9c76ea89.fontdata"
+path="res://.godot/imported/pixely_font.ttf-e2f1f0013f24fbe340464c4f0c15f914.fontdata"
 
 [deps]
 
-source_file="res://pixely_font.ttf"
-dest_files=["res://.godot/imported/pixely_font.ttf-74fd5cdb30350bfd76715aab9c76ea89.fontdata"]
+source_file="res://Minigames/Spread_the_Love/pixely_font.ttf"
+dest_files=["res://.godot/imported/pixely_font.ttf-e2f1f0013f24fbe340464c4f0c15f914.fontdata"]
 
 [params]
 

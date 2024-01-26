@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xy2qte8d6emb"
-path="res://.godot/imported/full_heart.png-481ba907cc17548cda397aa980cef46a.ctex"
+path="res://.godot/imported/full_heart.png-a0089a21eb5b9607f9749b63d725dd63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/full_heart.png"
-dest_files=["res://.godot/imported/full_heart.png-481ba907cc17548cda397aa980cef46a.ctex"]
+source_file="res://Minigames/Spread_the_Love/sprites/full_heart.png"
+dest_files=["res://.godot/imported/full_heart.png-a0089a21eb5b9607f9749b63d725dd63.ctex"]
 
 [params]
 

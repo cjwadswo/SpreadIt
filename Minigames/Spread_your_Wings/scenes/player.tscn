@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq7acqlhxiesk"]
+
+[ext_resource type="Script" path="res://Minigames/Spread_your_Wings/scripts/player.gd" id="1_dgfa6"]
+[ext_resource type="Texture2D" uid="uid://3g5mpys3mll0" path="res://Minigames/Spread_your_Wings/sprites/bird.png" id="2_12451"]
+[ext_resource type="Texture2D" uid="uid://ctxptk0lvwae8" path="res://Minigames/Spread_your_Wings/sprites/bird_flap.png" id="3_5q8dk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsu1c"]
+radius = 32.1403
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(180, 260)
+script = ExtResource("1_dgfa6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.584685
+texture = ExtResource("2_12451")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+rotation = 0.584685
+texture = ExtResource("3_5q8dk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bsu1c")

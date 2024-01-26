@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://d36ky7dganqmb"]
 
-[ext_resource type="Script" path="res://scripts/flower.gd" id="1_wllj4"]
-[ext_resource type="Texture2D" uid="uid://bxbn83chtuxye" path="res://sprites/fliower_sheet.png" id="2_u8pr0"]
+[ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/flower.gd" id="1_wllj4"]
+[ext_resource type="Texture2D" uid="uid://bxbn83chtuxye" path="res://Minigames/Weed_Killer/sprites/fliower_sheet.png" id="2_u8pr0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_py7v2"]
 atlas = ExtResource("2_u8pr0")
