@@ -46,10 +46,10 @@ func load_next_scene():
 			if has_won == false:
 				lives = lives - 1
 				if lives > 0:
+					get_tree().paused = false
 					get_tree().change_scene_to_file(next_scene)
 			else:
 				get_tree().change_scene_to_file(next_scene)
 				get_tree().paused = false
 	elif game_over == true:
 		get_tree().paused = true
-		print("paused from global.gd script, line 37")

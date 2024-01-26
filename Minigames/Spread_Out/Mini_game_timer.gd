@@ -23,7 +23,7 @@ func _on_timeout():
 		# Check if the countdown has reached zero
 		if countdown_duration <= 0:
 			countdown_timer.stop()
-			countdown_label.text = "Countdown finished!"
-			print("Countdown finished. Do something here.")
+			Global.game_over = true
+			Global.has_won	= false
 		else:
 			print("Time left:", countdown_duration)
