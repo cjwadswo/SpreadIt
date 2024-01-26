@@ -9,25 +9,28 @@ var pipe_spawn_interval = 0.5 * Global.speed
 func _ready():
 	Global.game_over = false
 	Global.has_won = false
+	get_node("Transitions/AnimationPlayer").play("Fade_in")
 
 func game_won():
 	Global.score += 1
-	Global.game_over = true
-	Global.has_won = true
+	
 	print("game won")
 
 func game_lost():
-	Global.game_over = true
-	Global.has_won = false
+	get_node("Transition/AnimationPlayer").play("move_down")
 	print("game lost")
 
 func _on_flower_emitscore():
 	Global.spread_the_love_score += 1
 
 func _on_timer_out_of_time():
+	get_node("Transition/AnimationPlayer").play("move_down")
+	Global.has_won = true
 	game_won()
 
 func _on_player_game_lost():
+	Global.has_won = false
+	
 	game_lost()
 
 func _process(delta):
@@ -46,3 +49,7 @@ func spawn_pipe_bottom():
 	var pipe_instance_bottom = pipe_scene_bottom.instantiate()
 	add_child(pipe_instance_bottom)
 	pipe_instance_bottom.position = Vector2(randf_range(400,500), 700)
+
+
+func _on_animation_player_animation_finished(anim_name):
+	Global.game_over = true

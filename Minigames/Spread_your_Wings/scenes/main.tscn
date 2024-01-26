@@ -1,9 +1,65 @@
-[gd_scene load_steps=5 format=3 uid="uid://lvid1wa3lc3m"]
+[gd_scene load_steps=12 format=3 uid="uid://lvid1wa3lc3m"]
 
 [ext_resource type="Script" path="res://Minigames/Spread_your_Wings/scripts/main.gd" id="1_2ruiv"]
 [ext_resource type="PackedScene" uid="uid://cq7acqlhxiesk" path="res://Minigames/Spread_your_Wings/scenes/player.tscn" id="2_tfs7p"]
 [ext_resource type="Script" path="res://Minigames/Spread_your_Wings/scripts/Timer.gd" id="4_ai6pq"]
 [ext_resource type="FontFile" uid="uid://482hxaseeqp" path="res://Minigames/Spread_your_Wings/pixely_font.ttf" id="4_uxjrv"]
+[ext_resource type="Texture2D" uid="uid://6nmi7340woxa" path="res://MainMenu/butter_knife.png" id="5_jn3i2"]
+[ext_resource type="Script" path="res://Minigames/Spread_Out/Transitions.gd" id="6_ex6sh"]
+
+[sub_resource type="Animation" id="Animation_t3lmi"]
+resource_name = "move_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-34, -21), Vector2(-34, 757)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kx3yt"]
+_data = {
+"move_down": SubResource("Animation_t3lmi")
+}
+
+[sub_resource type="Animation" id="Animation_7ax0f"]
+resource_name = "Fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 5.27803),
+"update": 0,
+"values": [Color(1, 0.941176, 0.478431, 1), Color(1, 0.941176, 0.478431, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i0su1"]
+_data = {
+"Fade_in": SubResource("Animation_7ax0f")
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e3iid"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_2ruiv")
@@ -24,5 +80,49 @@ offset_bottom = 26.0
 theme_override_fonts/font = ExtResource("4_uxjrv")
 text = "10"
 
+[node name="Transition" type="ColorRect" parent="."]
+offset_left = -34.0
+offset_top = -21.0
+offset_right = 834.0
+offset_bottom = 673.003
+scale = Vector2(0.501343, -1.10295)
+color = Color(1, 1, 0.631373, 1)
+
+[node name="ButterKnife" type="Sprite2D" parent="Transition"]
+position = Vector2(467.859, 19.1477)
+rotation = 1.57422
+scale = Vector2(1.01901, -6.09298)
+texture = ExtResource("5_jn3i2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
+libraries = {
+"": SubResource("AnimationLibrary_kx3yt")
+}
+
+[node name="Transitions" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -126.0
+offset_top = -9.0
+offset_right = -86.0
+offset_bottom = 31.0
+script = ExtResource("6_ex6sh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transitions"]
+libraries = {
+"": SubResource("AnimationLibrary_i0su1")
+}
+
+[node name="TextureRect" type="TextureRect" parent="Transitions"]
+modulate = Color(1, 0.941176, 0.478431, 1)
+layout_mode = 0
+offset_left = 60.0
+offset_top = -14.0
+offset_right = 547.0
+offset_bottom = 687.0
+pivot_offset = Vector2(90, 160)
+texture = SubResource("CanvasTexture_e3iid")
+
 [connection signal="game_lost" from="player" to="." method="_on_player_game_lost"]
 [connection signal="out_of_time" from="Timer" to="." method="_on_timer_out_of_time"]
+[connection signal="animation_finished" from="Transition/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
