@@ -8,6 +8,14 @@ var target_pos: Vector2
 func _ready():
 	start_pos = global_position
 	target_pos = start_pos + move_dir
+	if Global.speed == 1:
+		move_speed = 20.0
+	elif Global.speed == 2:
+		move_speed = 30.0
+	elif Global.speed == 3:
+		move_speed = 40.0
+	else:
+		move_speed = 45.0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

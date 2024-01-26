@@ -7,11 +7,13 @@ var has_won_text : Label
 @export var transitioner : Transitioner
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	transitioner.fade_out()
 	#generate draggable objects
 	Global.game_over = false
 	Global.has_won = false
 	#generate drop_area zones
+	
 	$Timer.start()
 	draggable_nodes = get_tree().get_nodes_in_group("dragable")
 	draggable_count = draggable_nodes.size()
