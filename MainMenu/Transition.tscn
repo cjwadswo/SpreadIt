@@ -32,9 +32,9 @@ grow_vertical = 2
 
 [node name="Transition" type="ColorRect" parent="."]
 layout_mode = 0
-offset_top = 559.4
+offset_top = -3.045
 offset_right = 369.0
-offset_bottom = 1192.4
+offset_bottom = 629.955
 scale = Vector2(0.981343, -1.10295)
 color = Color(1, 1, 0.631373, 1)
 

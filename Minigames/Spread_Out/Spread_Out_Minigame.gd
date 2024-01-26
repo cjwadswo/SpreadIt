@@ -29,9 +29,14 @@ func check_win_condition():
 			count += 1
 	if count == draggable_count:
 		has_won_text.visible = true
-		Global.has_won = true
-		Global.game_over = true
+		$Transition/AnimationPlayer.play("Move down")
+		
 		
 		
 func _on_timer_timeout():
 	get_node("MinigameText").visible = false
+
+
+func _on_animation_player_animation_finished(anim_name):
+	Global.has_won = true
+	Global.game_over = true
