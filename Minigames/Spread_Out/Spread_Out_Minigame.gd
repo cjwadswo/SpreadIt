@@ -7,11 +7,13 @@ var has_won_text : Label
 @export var transitioner : Transitioner
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	transitioner.fade_out()
 	#generate draggable objects
 	Global.game_over = false
 	Global.has_won = false
 	#generate drop_area zones
+	
 	$Timer.start()
 	draggable_nodes = get_tree().get_nodes_in_group("dragable")
 	draggable_count = draggable_nodes.size()
@@ -29,14 +31,9 @@ func check_win_condition():
 			count += 1
 	if count == draggable_count:
 		has_won_text.visible = true
-		$Transition/AnimationPlayer.play("Move down")
-		
+		Global.has_won = true
+		Global.game_over = true
 		
 		
 func _on_timer_timeout():
 	get_node("MinigameText").visible = false
-
-
-func _on_animation_player_animation_finished(anim_name):
-	Global.has_won = true
-	Global.game_over = true

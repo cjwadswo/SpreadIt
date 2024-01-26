@@ -135,8 +135,10 @@ text = "8"
 [node name="Transitions" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -3.0
+offset_top = 1.0
+offset_right = 37.0
+offset_bottom = 41.0
 script = ExtResource("9_li7ca")
 
 [node name="TextureRect" type="TextureRect" parent="Transitions"]
@@ -156,9 +158,9 @@ libraries = {
 
 [node name="Transition" type="ColorRect" parent="."]
 offset_left = -91.0
-offset_top = -170.0
+offset_top = -165.0
 offset_right = 271.0
-offset_bottom = 180.0
+offset_bottom = 185.0
 scale = Vector2(0.501343, -1.10295)
 color = Color(1, 1, 0.631373, 1)
 

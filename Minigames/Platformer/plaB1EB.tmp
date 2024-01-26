@@ -24,6 +24,8 @@ _data = {
 "Move Down": SubResource("Animation_l2chh")
 }
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_ifhel"]
+
 [sub_resource type="Animation" id="Animation_7ax0f"]
 resource_name = "Fade_in"
 tracks/0/type = "value"
@@ -56,8 +58,6 @@ _data = {
 "Fade_in": SubResource("Animation_7ax0f")
 }
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_ifhel"]
-
 [node name="Platformer" type="Node2D"]
 
 [node name="Main" parent="." instance=ExtResource("1_q5ycw")]
@@ -65,9 +65,9 @@ position = Vector2(163, -1)
 
 [node name="Transition" type="ColorRect" parent="Main"]
 offset_left = -218.0
-offset_top = -128.0
+offset_top = -114.0
 offset_right = 83.0
-offset_bottom = 222.0
+offset_bottom = 236.0
 scale = Vector2(0.501343, -1.10295)
 color = Color(1, 1, 0.631373, 1)
 
@@ -91,13 +91,8 @@ offset_right = -86.0
 offset_bottom = 31.0
 script = ExtResource("3_d7ubw")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/Transitions"]
-libraries = {
-"": SubResource("AnimationLibrary_i0su1")
-}
-
 [node name="TextureRect" type="TextureRect" parent="Main/Transitions"]
-modulate = Color(1, 0.941176, 0.478431, 1)
+modulate = Color(1, 0.941176, 0.478431, 0.9)
 layout_mode = 0
 offset_left = -90.0
 offset_top = -161.0
@@ -105,6 +100,11 @@ offset_right = 89.0
 offset_bottom = 161.0
 pivot_offset = Vector2(90, 160)
 texture = SubResource("CanvasTexture_ifhel")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/Transitions"]
+libraries = {
+"": SubResource("AnimationLibrary_i0su1")
+}
 
 [connection signal="animation_finished" from="Main/Transition/AnimationPlayer" to="Main/EndFlag" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Main/Transition/AnimationPlayer" to="Main/RisingWater" method="_on_animation_player_animation_finished"]
