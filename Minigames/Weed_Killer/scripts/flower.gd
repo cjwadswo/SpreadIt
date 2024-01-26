@@ -16,3 +16,12 @@ func _process(delta):
 			$Sprite.play()
 			modulate = Color.WHITE
 			emitscore.emit()
+
+
+
+func _on_emitscore():
+	pass # Replace with function body.
+
+
+func _on_flower_2_emitscore():
+	pass # Replace with function body.
