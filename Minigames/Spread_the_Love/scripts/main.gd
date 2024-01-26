@@ -12,7 +12,7 @@ func game_won():
 
 func game_lost():
 	Global.game_over = true
-	Global.has_won = true
+	Global.has_won = false
 	print("game lost")
 
 func _process(delta):

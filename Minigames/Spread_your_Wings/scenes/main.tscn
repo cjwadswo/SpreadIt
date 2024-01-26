@@ -24,4 +24,5 @@ offset_bottom = 26.0
 theme_override_fonts/font = ExtResource("4_uxjrv")
 text = "10"
 
+[connection signal="game_lost" from="player" to="." method="_on_player_game_lost"]
 [connection signal="out_of_time" from="Timer" to="." method="_on_timer_out_of_time"]
