@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cr3w1jcbqjvjf"]
+[gd_scene load_steps=9 format=3 uid="uid://cr3w1jcbqjvjf"]
 
 [ext_resource type="Script" path="res://Minigames/Spread_the_Love/scripts/main.gd" id="1_ejnl7"]
 [ext_resource type="FontFile" uid="uid://b4am8e5yrtwmg" path="res://Minigames/Spread_the_Love/pixely_font.ttf" id="1_sn41x"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Minigames/Spread_the_Love/scripts/SpeedLabel.gd" id="5_2qpbw"]
 [ext_resource type="Script" path="res://Minigames/Spread_the_Love/scripts/Timer.gd" id="5_x0ihl"]
 [ext_resource type="Script" path="res://Minigames/Spread_the_Love/scripts/ScoreLabel.gd" id="6_ynitl"]
+[ext_resource type="Script" path="res://Minigames/Spread_the_Love/scenes/Title.gd" id="8_7uc0k"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ejnl7")
@@ -41,28 +42,57 @@ offset_left = 317.0
 offset_top = 3.0
 offset_right = 357.0
 offset_bottom = 26.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_sn41x")
 text = "10"
 
 [node name="SpeedLabel" type="Label" parent="."]
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 42.0
-offset_bottom = 25.0
+offset_left = 6.0
+offset_top = 26.0
+offset_right = 80.0
+offset_bottom = 49.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_sn41x")
 text = "Speed: "
 script = ExtResource("5_2qpbw")
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_left = 2.0
-offset_top = 26.0
-offset_right = 42.0
-offset_bottom = 49.0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 77.0
+offset_bottom = 25.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_sn41x")
 text = "Score: "
 script = ExtResource("6_ynitl")
+
+[node name="Title" type="Label" parent="."]
+z_index = 1
+offset_left = 1.0
+offset_top = 450.0
+offset_right = 359.0
+offset_bottom = 495.0
+pivot_offset = Vector2(179, 22)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_sn41x")
+text = "Hearts are broken.
+Spread the love!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_7uc0k")
+
+[node name="Timer" type="Timer" parent="Title"]
+wait_time = 3.0
+one_shot = true
+autostart = true
 
 [connection signal="area_entered" from="broken_heart" to="broken_heart" method="_on_area_entered"]
 [connection signal="area_entered" from="broken_heart3" to="broken_heart3" method="_on_area_entered"]
 [connection signal="area_entered" from="broken_heart2" to="broken_heart2" method="_on_area_entered"]
 [connection signal="out_of_time" from="Timer" to="." method="_on_timer_out_of_time"]
+[connection signal="timeout" from="Title/Timer" to="Title" method="_on_timer_timeout"]
