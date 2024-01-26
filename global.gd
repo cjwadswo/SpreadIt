@@ -8,7 +8,7 @@ var minigame_spread_the_wings = "res://Minigames/Spread_your_Wings/scenes/main.t
 var minigame_weed_killer = "res://Minigames/Weed_Killer/scenes/main.tscn"
 var minigames = []
 var random_minigames
-@export var next_scene = minigame_weed_killer
+var next_scene
 
 var weed_killer_score = 0
 var spread_the_love_score = 0
@@ -27,12 +27,13 @@ func _ready():
 	minigames.append(minigame_spread_out)
 	minigames.append(minigame_platformer)
 	minigames.append(minigame_spread_the_love)
-	#minigames.append(minigame_spread_the_wings)
-	#minigames.append(minigame_weed_killer)
+	minigames.append(minigame_spread_the_wings)
+	minigames.append(minigame_weed_killer)
 	random_minigames = minigames.duplicate()
 	#Shuffle minigames
 	random_minigames.shuffle()
 	print(random_minigames)
+	next_scene = random_minigames.pop_back()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	load_next_scene()

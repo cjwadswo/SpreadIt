@@ -1,6 +1,6 @@
 extends Control
 
-@export var next_scene = Global.next_scene
+var next_scene = Global.next_scene
 var is_animating = false
 
 func _process(delta):
@@ -32,4 +32,4 @@ func butter_transition():
 
 
 func _on_animation_player_animation_finished(anim_name):
-	get_tree().change_scene_to_file(next_scene)
+	get_tree().change_scene_to_file(Global.next_scene)

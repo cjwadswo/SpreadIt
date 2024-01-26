@@ -321,7 +321,7 @@ script = ExtResource("14_axm2p")
 [connection signal="emitscore" from="Flower" to="Flower" method="_on_emitscore"]
 [connection signal="emitscore" from="Flower2" to="." method="_on_flower_emitscore"]
 [connection signal="emitscore" from="Flower2" to="Flower" method="_on_flower_2_emitscore"]
-[connection signal="emitscore" from="Flower3" to="." method="_on_flower_3_emitscore"]
+[connection signal="emitscore" from="Flower3" to="." method="_on_flower_emitscore"]
 [connection signal="emitscore" from="Flower4" to="." method="_on_flower_emitscore"]
 [connection signal="emitscore" from="Flower5" to="." method="_on_flower_emitscore"]
 [connection signal="emitscore" from="Flower6" to="." method="_on_flower_emitscore"]
