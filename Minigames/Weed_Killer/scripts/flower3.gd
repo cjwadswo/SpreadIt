@@ -17,4 +17,5 @@ func _process(delta):
 			set_process(false)
 			$Sprite.play()
 			modulate = Color.WHITE
-			emitscore.emit()
+			if self.visible == true:
+				emitscore.emit()
