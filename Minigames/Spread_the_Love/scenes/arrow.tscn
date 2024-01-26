@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cgsfkhft5mmeh"]
 
-[ext_resource type="Script" path="res://scripts/arrow.gd" id="1_h0e2f"]
-[ext_resource type="Texture2D" uid="uid://bwbwwfyqofy75" path="res://icon.svg" id="2_41vya"]
-[ext_resource type="Texture2D" uid="uid://dgm2jyd723wk" path="res://sprites/heart.png" id="3_6ohex"]
+[ext_resource type="Script" path="res://Minigames/Spread_the_Love/scripts/arrow.gd" id="1_h0e2f"]
+[ext_resource type="Texture2D" uid="uid://bwbwwfyqofy75" path="res://Minigames/Spread_the_Love/icon.svg" id="2_41vya"]
+[ext_resource type="Texture2D" uid="uid://dgm2jyd723wk" path="res://Minigames/Spread_the_Love/sprites/heart.png" id="3_6ohex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2glrm"]
 size = Vector2(560, 28)

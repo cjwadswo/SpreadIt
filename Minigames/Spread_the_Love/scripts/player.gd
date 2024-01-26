@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var arrow = preload("res://scenes/arrow.tscn")
+@onready var arrow = preload("res://Minigames/Spread_the_Love/scenes/arrow.tscn")
 
 var start_pos : Vector2
 var target_pos : Vector2

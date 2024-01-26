@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xhslt48kv18b"
-path="res://.godot/imported/bow.png-ad34286c2448e8ca21188eaa3f42d6df.ctex"
+path="res://.godot/imported/bow.png-b0d28142c2f91455e25be231f1052f6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bow.png"
-dest_files=["res://.godot/imported/bow.png-ad34286c2448e8ca21188eaa3f42d6df.ctex"]
+source_file="res://Minigames/Spread_the_Love/sprites/bow.png"
+dest_files=["res://.godot/imported/bow.png-b0d28142c2f91455e25be231f1052f6f.ctex"]
 
 [params]
 

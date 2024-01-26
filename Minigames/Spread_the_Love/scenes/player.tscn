@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cufr4n72rnj8h"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_hatbp"]
-[ext_resource type="Texture2D" uid="uid://b1wdcca1c6q82" path="res://sprites/cupid.png" id="2_b8331"]
-[ext_resource type="Texture2D" uid="uid://xhslt48kv18b" path="res://sprites/bow.png" id="3_ilrn4"]
+[ext_resource type="Script" path="res://Minigames/Spread_the_Love/scripts/player.gd" id="1_hatbp"]
+[ext_resource type="Texture2D" uid="uid://b1wdcca1c6q82" path="res://Minigames/Spread_the_Love/sprites/cupid.png" id="2_b8331"]
+[ext_resource type="Texture2D" uid="uid://xhslt48kv18b" path="res://Minigames/Spread_the_Love/sprites/bow.png" id="3_ilrn4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2tpqk"]
 size = Vector2(128, 128)
