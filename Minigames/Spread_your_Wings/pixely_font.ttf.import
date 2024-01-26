@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://482hxaseeqp"
-path="res://.godot/imported/pixely_font.ttf-74fd5cdb30350bfd76715aab9c76ea89.fontdata"
+path="res://.godot/imported/pixely_font.ttf-f90a6599d598ec6f5dcaba834d2fc39e.fontdata"
 
 [deps]
 
-source_file="res://pixely_font.ttf"
-dest_files=["res://.godot/imported/pixely_font.ttf-74fd5cdb30350bfd76715aab9c76ea89.fontdata"]
+source_file="res://Minigames/Spread_your_Wings/pixely_font.ttf"
+dest_files=["res://.godot/imported/pixely_font.ttf-f90a6599d598ec6f5dcaba834d2fc39e.fontdata"]
 
 [params]
 

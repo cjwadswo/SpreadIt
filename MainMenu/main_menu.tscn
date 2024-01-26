@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dge4ubxujl2ml"]
 
 [ext_resource type="FontFile" uid="uid://do67eer324h6c" path="res://MainMenu/pixely.ttf" id="1_2he5b"]
-[ext_resource type="Script" path="res://main_menu.gd" id="2_g6vbt"]
+[ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="2_g6vbt"]
 [ext_resource type="Script" path="res://title.gd" id="3_uques"]
 [ext_resource type="Script" path="res://fade_to_black.gd" id="4_ginrb"]
 [ext_resource type="Texture2D" uid="uid://6nmi7340woxa" path="res://MainMenu/butter_knife.png" id="5_inbof"]

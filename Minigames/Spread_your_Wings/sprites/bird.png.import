@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3g5mpys3mll0"
-path="res://.godot/imported/bird.png-2a2641cc7a85643e633b5feb636c6ca1.ctex"
+path="res://.godot/imported/bird.png-440fa5261efd624d5d45a26f1cbf23e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bird.png"
-dest_files=["res://.godot/imported/bird.png-2a2641cc7a85643e633b5feb636c6ca1.ctex"]
+source_file="res://Minigames/Spread_your_Wings/sprites/bird.png"
+dest_files=["res://.godot/imported/bird.png-440fa5261efd624d5d45a26f1cbf23e6.ctex"]
 
 [params]
 

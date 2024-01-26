@@ -1,6 +1,6 @@
 extends Control
 
-@export var next_scene = "res://Minigames/Spread_Out/Spread_Out_Minigame.tscn"
+@export var next_scene = Global.next_scene
 var is_animating = false
 
 func _process(delta):

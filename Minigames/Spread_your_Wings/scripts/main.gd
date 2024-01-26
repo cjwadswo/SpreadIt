@@ -1,7 +1,7 @@
 extends Node
 
-var pipe_scene_top = preload("res://scenes/pillar_top.tscn")
-var pipe_scene_bottom = preload("res://scenes/pillar_bottom.tscn")
+var pipe_scene_top = preload("res://Minigames/Spread_your_Wings/scenes/pillar_top.tscn")
+var pipe_scene_bottom = preload("res://Minigames/Spread_your_Wings/scenes/pillar_bottom.tscn")
 var pipe_timer = 0
 var pipe_spawn_interval = 0.5 * Global.speed
 
