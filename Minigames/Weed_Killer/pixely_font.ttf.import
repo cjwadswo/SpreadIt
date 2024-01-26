@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ctxvr2siy75fd"
-path="res://.godot/imported/pixely_font.ttf-74fd5cdb30350bfd76715aab9c76ea89.fontdata"
+path="res://.godot/imported/pixely_font.ttf-ce3993bc0d4ccaa978977f578f2f2b5a.fontdata"
 
 [deps]
 
-source_file="res://pixely_font.ttf"
-dest_files=["res://.godot/imported/pixely_font.ttf-74fd5cdb30350bfd76715aab9c76ea89.fontdata"]
+source_file="res://Minigames/Weed_Killer/pixely_font.ttf"
+dest_files=["res://.godot/imported/pixely_font.ttf-ce3993bc0d4ccaa978977f578f2f2b5a.fontdata"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d3gyjxws3fsb"
-path="res://.godot/imported/music.mp3-4d55fae6084a0fbb5b0ec7648a87c743.mp3str"
+path="res://.godot/imported/music.mp3-04e79991501064f5b238a6dcbc8a4dea.mp3str"
 
 [deps]
 
-source_file="res://sounds/music.mp3"
-dest_files=["res://.godot/imported/music.mp3-4d55fae6084a0fbb5b0ec7648a87c743.mp3str"]
+source_file="res://Minigames/Weed_Killer/sounds/music.mp3"
+dest_files=["res://.godot/imported/music.mp3-04e79991501064f5b238a6dcbc8a4dea.mp3str"]
 
 [params]
 
