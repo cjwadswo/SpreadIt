@@ -329,3 +329,4 @@ script = ExtResource("14_axm2p")
 [connection signal="emitscore" from="Flower8" to="." method="_on_flower_emitscore"]
 [connection signal="emitscore" from="Flower9" to="." method="_on_flower_emitscore"]
 [connection signal="timeout" from="Weed_Generator/Timer" to="Weed_Generator" method="_on_timer_timeout"]
+[connection signal="out_of_time" from="Timer" to="." method="_on_timer_out_of_time"]

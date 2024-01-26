@@ -9,12 +9,15 @@ var minigame_weed_killer = "res://Minigames/Weed_Killer/scenes/main.tscn"
 var minigames = []
 @export var next_scene = minigame_weed_killer
 
+var weed_killer_score = 0
+var spread_the_love_score = 0
+var spread_your_wings_score = 0
 var score = 0
 var game_over = false
 var has_won = false
 var game_start = false
 var is_game_paused = false
-var speed = 4.0
+var speed = 1.0
 var lives = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -32,3 +35,4 @@ func _ready():
 func _process(delta):
 	if game_over == true:
 		get_tree().paused = true
+		print("paused from global.gd script, line 37")

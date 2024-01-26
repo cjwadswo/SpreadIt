@@ -32,7 +32,7 @@ func _on_area_entered(area):
 			$CollisionShape2D.visible = false
 			$Label.visible = false
 			$AnimatedSprite2D.visible = true
-			Global.score += 1
+			Global.spread_the_love_score += 1
 			alive = false
 			set_process(false)
 

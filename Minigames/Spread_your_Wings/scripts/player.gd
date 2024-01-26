@@ -3,6 +3,7 @@ extends CharacterBody2D
 var jump_force = Vector2(0, -400)
 var gravity = 1000
 var floor = 640
+signal game_lost
 
 func _process(delta):
 	var mouse_pos = get_global_mouse_position()
@@ -26,7 +27,7 @@ func jump():
 	$Sprite2D2.visible = false
 
 func game_over():
-	Global.game_over = true
+	game_lost.emit()
 	position.y = floor
 	position.x = 0
 	velocity = Vector2.ZERO
