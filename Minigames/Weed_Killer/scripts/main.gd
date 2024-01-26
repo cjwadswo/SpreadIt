@@ -16,7 +16,10 @@ func _process(delta):
 		if Global.score == 6:
 			Global.has_won = true
 			Global.game_over = true
-
+	if Global.speed == 4:
+		if Global.score == 9:
+			Global.has_won = true
+			Global.game_over = true
 func _on_button_pressed():
 	pass
 	#get_tree().paused = false
