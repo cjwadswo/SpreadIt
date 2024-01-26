@@ -287,7 +287,6 @@ autostart = true
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_rf8jr")
 volume_db = -20.0
-autoplay = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
@@ -311,7 +310,7 @@ offset_bottom = 49.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("9_rsrex")
-text = "Speed: "
+text = "Level: "
 script = ExtResource("13_07pvn")
 
 [node name="ScoreLabel" type="Label" parent="."]

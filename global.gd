@@ -22,7 +22,6 @@ var is_game_paused = false
 var speed = 1.0
 var lives = 3
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	#Add minigames to the array.
 	add_minigames_to_array()
@@ -31,7 +30,7 @@ func _ready():
 	random_minigames.shuffle()
 	print(random_minigames)
 	next_scene = random_minigames.pop_back()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	if Global.speed == 1:
 		Global.spread_out_timer = 8

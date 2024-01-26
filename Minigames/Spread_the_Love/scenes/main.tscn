@@ -55,7 +55,7 @@ offset_bottom = 49.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_sn41x")
-text = "Speed: "
+text = "Level: "
 script = ExtResource("5_2qpbw")
 
 [node name="ScoreLabel" type="Label" parent="."]
