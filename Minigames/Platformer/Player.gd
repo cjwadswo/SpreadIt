@@ -18,8 +18,9 @@ func _physics_process(delta):
 		game_over()
 
 func game_over():
-	get_tree().paused = true
+	
 	lose_text.visible = true
+	Global.game_over = true
 
 	
 func move():

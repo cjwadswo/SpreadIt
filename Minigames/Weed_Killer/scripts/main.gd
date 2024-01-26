@@ -5,7 +5,7 @@ func game_won():
 
 func _ready():
 	Global.game_over = false
-	
+	Global.has_won = false
 
 func _process(delta):
 	if Global.speed <= 2:

@@ -9,7 +9,8 @@ var has_won_text : Label
 func _ready():
 	transitioner.fade_out()
 	#generate draggable objects
-	
+	Global.game_over = false
+	Global.has_won = false
 	#generate drop_area zones
 	$Timer.start()
 	draggable_nodes = get_tree().get_nodes_in_group("dragable")
@@ -27,8 +28,9 @@ func check_win_condition():
 		if node.get_child(0).is_in_area == true:
 			count += 1
 	if count == draggable_count:
-		has_won = true
 		has_won_text.visible = true
+		Global.has_won = true
+		Global.game_over = true
 		
 		
 func _on_timer_timeout():

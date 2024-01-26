@@ -6,6 +6,7 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
-		get_tree().paused = true
 		win_text.visible = true
+		Global.has_won = true
+		Global.game_over = true
 		
