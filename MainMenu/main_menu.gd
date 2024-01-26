@@ -22,7 +22,6 @@ func _input(event):
 			get_tree().quit()
 
 func _on_fadeto_black_transition_complete():
-	print("fade_complete")
 	get_tree().change_scene_to_file(next_scene)
 	
 func butter_transition():

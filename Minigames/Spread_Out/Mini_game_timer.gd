@@ -2,11 +2,12 @@ extends Timer
 
 var countdown_timer : Timer = self  # Replace with the actual path to your Timer node
 var countdown_label : Label # Replace with the actual path to your Label node
-var countdown_duration : int = 8
+var countdown_duration : int
 var parent_node
 func _ready():
 	# Connect the Timer's timeout signal to a function
 	# Start the Timer
+	countdown_duration = Global.spread_out_timer
 	countdown_timer.start()
 	countdown_label = get_parent().get_node("TimerLabel")
 	parent_node = get_parent()

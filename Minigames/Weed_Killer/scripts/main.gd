@@ -3,6 +3,7 @@ extends Node2D
 func _ready():
 	Global.game_over = false
 	Global.has_won = false
+	Global.weed_killer_score = 0
 
 func game_won():
 	Global.score += 1
@@ -21,6 +22,7 @@ func _on_timer_out_of_time():
 func _process(delta):
 	if Global.speed <= 2.0 and Global.weed_killer_score == 3:
 			game_won()
+			
 	if Global.speed == 3.0 and Global.weed_killer_score == 6:
 			game_won()
 	if Global.speed > 3.0 and Global.weed_killer_score > 8:
