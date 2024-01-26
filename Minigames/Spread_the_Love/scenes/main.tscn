@@ -65,3 +65,4 @@ script = ExtResource("6_ynitl")
 [connection signal="area_entered" from="broken_heart" to="broken_heart" method="_on_area_entered"]
 [connection signal="area_entered" from="broken_heart3" to="broken_heart3" method="_on_area_entered"]
 [connection signal="area_entered" from="broken_heart2" to="broken_heart2" method="_on_area_entered"]
+[connection signal="out_of_time" from="Timer" to="." method="_on_timer_out_of_time"]

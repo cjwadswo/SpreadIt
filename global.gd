@@ -10,6 +10,9 @@ var minigames = []
 var random_minigames
 @export var next_scene = minigame_weed_killer
 
+var weed_killer_score = 0
+var spread_the_love_score = 0
+var spread_your_wings_score = 0
 var score = 0
 var game_over = false
 var has_won = false
@@ -48,3 +51,4 @@ func load_next_scene():
 				get_tree().paused = false
 	elif game_over == true:
 		get_tree().paused = true
+		print("paused from global.gd script, line 37")

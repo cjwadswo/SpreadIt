@@ -1,6 +1,6 @@
 extends Area2D
 var startvar = 0
-signal emitscore()
+signal emitscore
 
 func _ready():
 	$Sprite.pause()
