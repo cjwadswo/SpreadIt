@@ -58,6 +58,7 @@ func load_next_scene():
 				get_tree().paused = false
 	elif lives > 0: #Randomize array again and go again with higher difficulty!
 		speed = speed + 1.0
+		print("speed is: ", speed)
 		random_minigames = minigames.duplicate()
 		random_minigames.shuffle()
 		print(random_minigames)

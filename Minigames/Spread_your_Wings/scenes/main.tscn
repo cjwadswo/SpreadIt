@@ -30,6 +30,7 @@ theme_override_fonts/font = ExtResource("4_uxjrv")
 text = "10"
 
 [node name="SpeedLabel" type="Label" parent="."]
+z_index = 1
 offset_left = 6.0
 offset_top = 26.0
 offset_right = 80.0

@@ -9,21 +9,22 @@ func game_won():
 	Global.score += 1
 	Global.game_over = true
 	Global.has_won = true
-	print("game won")
+	print("won weed killer")
 
 func game_lost():
 	Global.game_over = true
 	Global.has_won = false
-	print("game lost")
+	print("lost weed killer")
 
 func _on_timer_out_of_time():
 	game_lost()
 
 func _process(delta):
-	if Global.speed <= 2.0 and Global.weed_killer_score == 3:
+	if Global.speed < 2.0 and Global.weed_killer_score > 2:
 			game_won()
-			
-	if Global.speed == 3.0 and Global.weed_killer_score == 6:
+	if Global.speed == 2.0 and Global.weed_killer_score > 2:
+			game_won()
+	if Global.speed == 3.0 and Global.weed_killer_score > 5:
 			game_won()
 	if Global.speed > 3.0 and Global.weed_killer_score > 8:
 			game_won()

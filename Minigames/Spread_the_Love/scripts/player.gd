@@ -26,19 +26,13 @@ func _ready():
 	start_pos = global_position
 	target_pos = start_pos + move_dir
 	if Global.speed == 1.0:
-		print(Global.speed)
-		bow_speed = 1.25
-		print(bow_speed)
+		bow_speed = 1
 	elif Global.speed == 2.0:
-		print(Global.speed)
-		bow_speed = 1.0
-		print(bow_speed)
-	elif Global.speed == 3.0:
 		bow_speed = 0.75
-		print(bow_speed)
-	elif Global.speed > 3.0:
+	elif Global.speed == 3.0:
 		bow_speed = 0.5
-		print(bow_speed)
+	elif Global.speed > 3.0:
+		bow_speed = 0.25
 
 func _process(delta):
 	global_position = global_position.move_toward(target_pos, move_speed * delta)

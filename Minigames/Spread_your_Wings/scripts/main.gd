@@ -14,12 +14,12 @@ func game_won():
 	Global.score += 1
 	Global.game_over = true
 	Global.has_won = true
-	print("game won")
+	print("won spread your wings")
 
 func game_lost():
 	Global.game_over = true
 	Global.has_won = false
-	print("game lost")
+	print("lost spread your wings")
 
 func _on_flower_emitscore():
 	Global.spread_the_love_score += 1

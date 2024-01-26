@@ -26,7 +26,6 @@ func _on_area_entered(area):
 		area.queue_free()
 		health -= 1
 		$Label.text = str(health)
-		print("arrow hit")
 		if health < 1:
 			$Sprite2D.visible = false
 			$CollisionShape2D.visible = false

@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/SpeedLabel.gd" id="13_07pvn"]
 [ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/ScoreLabel.gd" id="14_axm2p"]
 [ext_resource type="FontFile" uid="uid://b4am8e5yrtwmg" path="res://Minigames/Spread_the_Love/pixely_font.ttf" id="15_al3xc"]
-[ext_resource type="Script" path="res://Minigames/Weed_Killer/scenes/Title.gd" id="16_p5imb"]
+[ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/Title.gd" id="16_p5imb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2sqmc"]
 texture = ExtResource("4_33lhr")
