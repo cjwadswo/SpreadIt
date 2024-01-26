@@ -160,7 +160,7 @@ libraries = {
 offset_left = -91.0
 offset_top = -165.0
 offset_right = 271.0
-offset_bottom = 185.0
+offset_bottom = 185.001
 scale = Vector2(0.501343, -1.10295)
 color = Color(1, 1, 0.631373, 1)
 
