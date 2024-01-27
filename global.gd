@@ -13,6 +13,7 @@ var next_scene
 var weed_killer_score = 0
 var spread_the_love_score = 0
 var spread_your_wings_score = 0
+var spread_out_timer = 8
 var score = 0
 var game_over = false
 var has_won = false
@@ -21,21 +22,24 @@ var is_game_paused = false
 var speed = 1.0
 var lives = 3
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	#Add minigames to the array.
-	minigames.append(minigame_spread_out)
-	minigames.append(minigame_platformer)
-	minigames.append(minigame_spread_the_love)
-	minigames.append(minigame_spread_the_wings)
-	minigames.append(minigame_weed_killer)
+	add_minigames_to_array()
 	random_minigames = minigames.duplicate()
 	#Shuffle minigames
 	random_minigames.shuffle()
 	print(random_minigames)
 	next_scene = random_minigames.pop_back()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
+	if Global.speed == 1:
+		Global.spread_out_timer = 8
+	elif Global.speed == 2:
+		Global.spread_out_timer = 5
+	elif Global.speed == 3:
+		Global.spread_out_timer = 3
+	else:
+		Global.spread_out_timer = 2
 	load_next_scene()
 	
 func load_next_scene():
@@ -51,5 +55,16 @@ func load_next_scene():
 			else:
 				get_tree().change_scene_to_file(next_scene)
 				get_tree().paused = false
-	elif game_over == true:
-		get_tree().paused = true
+	elif lives > 0: #Randomize array again and go again with higher difficulty!
+		speed = speed + 1.0
+		print("speed is: ", speed)
+		random_minigames = minigames.duplicate()
+		random_minigames.shuffle()
+		print(random_minigames)
+
+func add_minigames_to_array():
+	minigames.append(minigame_spread_out)
+	minigames.append(minigame_platformer)
+	minigames.append(minigame_spread_the_love)
+	minigames.append(minigame_spread_the_wings)
+	minigames.append(minigame_weed_killer)

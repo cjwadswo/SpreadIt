@@ -13,12 +13,14 @@ func _ready():
 
 func game_won():
 	Global.score += 1
+
 	
 	print("game won")
 
 func game_lost():
 	get_node("Transition/AnimationPlayer").play("move_down")
 	print("game lost")
+
 
 func _on_flower_emitscore():
 	Global.spread_the_love_score += 1
