@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://wmd12yahcqgr"]
+[gd_scene load_steps=20 format=3 uid="uid://wmd12yahcqgr"]
 
 [ext_resource type="Script" path="res://Minigames/Spread_Out/Spread_Out_Minigame.gd" id="1_6365x"]
 [ext_resource type="PackedScene" uid="uid://c0sq3n0ak4kcj" path="res://Minigames/Spread_Out/area_circle.tscn" id="2_xbvk2"]
@@ -9,7 +9,9 @@
 [ext_resource type="Script" path="res://Minigames/Spread_Out/Mini_game_timer.gd" id="8_4tmaa"]
 [ext_resource type="PackedScene" uid="uid://b74uop864jp1f" path="res://Minigames/Spread_Out/area_triangle.tscn" id="8_d0pdb"]
 [ext_resource type="Script" path="res://Minigames/Spread_Out/Transitions.gd" id="9_li7ca"]
+[ext_resource type="FontFile" uid="uid://ctxvr2siy75fd" path="res://Minigames/Weed_Killer/pixely_font.ttf" id="9_xvec6"]
 [ext_resource type="Texture2D" uid="uid://6nmi7340woxa" path="res://MainMenu/butter_knife.png" id="10_8o7ca"]
+[ext_resource type="Script" path="res://Minigames/Weed_Killer/scenes/GlobalScoreLabel.gd" id="10_e4ou5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4efak"]
 font_size = 28
@@ -131,6 +133,20 @@ label_settings = SubResource("LabelSettings_5pbsm")
 
 [node name="Mini_game_timer" type="Timer" parent="."]
 script = ExtResource("8_4tmaa")
+
+[node name="GlobalScoreLabel" type="Label" parent="Mini_game_timer"]
+offset_left = -89.0
+offset_top = -161.0
+offset_right = 271.0
+offset_bottom = -134.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("9_xvec6")
+text = "Lives: "
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_e4ou5")
 
 [node name="TimerLabel" type="Label" parent="."]
 offset_left = 72.0

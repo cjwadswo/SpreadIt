@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuwgg6pcxiocs"]
+[gd_scene load_steps=3 format=3 uid="uid://cuwgg6pcxiocs"]
 
 [ext_resource type="PackedScene" uid="uid://dge4ubxujl2ml" path="res://MainMenu/main_menu.tscn" id="1_ln0mn"]
+[ext_resource type="Script" path="res://retry.gd" id="2_r7kiw"]
 
 [node name="Main" type="Node2D"]
 
 [node name="MainMenu" parent="." instance=ExtResource("1_ln0mn")]
 offset_right = 360.0
 offset_bottom = 641.0
+
+[node name="Retry" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 352.0
+offset_right = 245.0
+offset_bottom = 397.0
+text = "Game over!
+Try again?"
+script = ExtResource("2_r7kiw")

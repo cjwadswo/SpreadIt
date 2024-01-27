@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dou2henr0qryf"]
+[gd_scene load_steps=31 format=3 uid="uid://dou2henr0qryf"]
 
 [ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/main.gd" id="1_ognl5"]
 [ext_resource type="Texture2D" uid="uid://bxbn83chtuxye" path="res://Minigames/Weed_Killer/sprites/fliower_sheet.png" id="2_ysujx"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/Timer.gd" id="11_s5t42"]
 [ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/SpeedLabel.gd" id="13_07pvn"]
 [ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/ScoreLabel.gd" id="14_axm2p"]
+[ext_resource type="Script" path="res://Minigames/Weed_Killer/scenes/GlobalScoreLabel.gd" id="15_7j4mj"]
 [ext_resource type="FontFile" uid="uid://b4am8e5yrtwmg" path="res://Minigames/Spread_the_Love/pixely_font.ttf" id="15_al3xc"]
 [ext_resource type="Script" path="res://Minigames/Weed_Killer/scenes/Title.gd" id="16_p5imb"]
 
@@ -324,6 +325,17 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("9_rsrex")
 text = "Score: "
 script = ExtResource("14_axm2p")
+
+[node name="GlobalScoreLabel" type="Label" parent="."]
+offset_left = 145.0
+offset_top = 2.0
+offset_right = 219.0
+offset_bottom = 25.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("9_rsrex")
+text = "Lives: "
+script = ExtResource("15_7j4mj")
 
 [node name="Title" type="Label" parent="."]
 z_index = 1

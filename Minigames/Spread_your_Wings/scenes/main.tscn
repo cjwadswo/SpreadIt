@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://lvid1wa3lc3m"]
+[gd_scene load_steps=10 format=3 uid="uid://lvid1wa3lc3m"]
 
 [ext_resource type="Script" path="res://Minigames/Spread_your_Wings/scripts/main.gd" id="1_2ruiv"]
 [ext_resource type="PackedScene" uid="uid://cq7acqlhxiesk" path="res://Minigames/Spread_your_Wings/scenes/player.tscn" id="2_tfs7p"]
@@ -7,6 +7,8 @@
 [ext_resource type="FontFile" uid="uid://b4am8e5yrtwmg" path="res://Minigames/Spread_the_Love/pixely_font.ttf" id="5_agk24"]
 [ext_resource type="Script" path="res://Minigames/Spread_your_Wings/scenes/Title.gd" id="6_q0puk"]
 [ext_resource type="Script" path="res://Minigames/Spread_the_Love/scripts/SpeedLabel.gd" id="7_ct3if"]
+[ext_resource type="FontFile" uid="uid://ctxvr2siy75fd" path="res://Minigames/Weed_Killer/pixely_font.ttf" id="8_hqd51"]
+[ext_resource type="Script" path="res://Minigames/Weed_Killer/scenes/GlobalScoreLabel.gd" id="9_5x25g"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_2ruiv")
@@ -61,6 +63,17 @@ script = ExtResource("6_q0puk")
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="GlobalScoreLabel" type="Label" parent="."]
+offset_left = 145.0
+offset_top = 2.0
+offset_right = 219.0
+offset_bottom = 25.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("8_hqd51")
+text = "Lives: "
+script = ExtResource("9_5x25g")
 
 [connection signal="game_lost" from="player" to="." method="_on_player_game_lost"]
 [connection signal="out_of_time" from="Timer" to="." method="_on_timer_out_of_time"]

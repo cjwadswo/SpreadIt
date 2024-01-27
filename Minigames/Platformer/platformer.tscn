@@ -1,10 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1l7xntueq51i"]
+[gd_scene load_steps=4 format=3 uid="uid://c1l7xntueq51i"]
 
 [ext_resource type="PackedScene" uid="uid://cck1bkpdcakk2" path="res://Minigames/Platformer/Level1.tscn" id="1_q5ycw"]
+[ext_resource type="FontFile" uid="uid://ctxvr2siy75fd" path="res://Minigames/Weed_Killer/pixely_font.ttf" id="2_4olvs"]
+[ext_resource type="Script" path="res://Minigames/Weed_Killer/scenes/GlobalScoreLabel.gd" id="3_vs88u"]
 
 [node name="Platformer" type="Node2D"]
 
 [node name="Main" parent="." instance=ExtResource("1_q5ycw")]
 position = Vector2(163, -1)
+
+[node name="GlobalScoreLabel" type="Label" parent="."]
+offset_left = 15.0
+offset_top = -124.0
+offset_right = 89.0
+offset_bottom = -101.0
+scale = Vector2(0.33, 0.33)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_4olvs")
+text = "Lives: "
+script = ExtResource("3_vs88u")
 
 [editable path="Main"]
