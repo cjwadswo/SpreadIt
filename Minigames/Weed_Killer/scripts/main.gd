@@ -3,6 +3,7 @@ extends Node2D
 func _ready():
 	Global.game_over = false
 	Global.has_won = false
+	Global.weed_killer_score = 0
 
 func game_won():
 	Global.score += 1
