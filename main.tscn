@@ -10,6 +10,7 @@ offset_right = 360.0
 offset_bottom = 641.0
 
 [node name="Retry" type="Label" parent="MainMenu"]
+visible = false
 layout_mode = 0
 offset_left = 123.0
 offset_top = 352.0

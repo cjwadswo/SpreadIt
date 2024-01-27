@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cck1bkpdcakk2" path="res://Minigames/Platformer/Level1.tscn" id="1_q5ycw"]
 [ext_resource type="FontFile" uid="uid://ctxvr2siy75fd" path="res://Minigames/Weed_Killer/pixely_font.ttf" id="2_4olvs"]
-[ext_resource type="Script" path="res://Minigames/Weed_Killer/scenes/GlobalScoreLabel.gd" id="3_vs88u"]
+[ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/GlobalScoreLabel.gd" id="3_vs88u"]
 
 [node name="Platformer" type="Node2D"]
 

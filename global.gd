@@ -10,6 +10,7 @@ var minigames = []
 var random_minigames
 var next_scene
 
+var spread_out_timer = 8
 var weed_killer_score = 0
 var spread_the_love_score = 0
 var spread_your_wings_score = 0
@@ -20,6 +21,7 @@ var game_start = false
 var is_game_paused = false
 var speed = 1.0
 var lives = 3
+var retry = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -53,3 +55,35 @@ func load_next_scene():
 				get_tree().paused = false
 	elif game_over == true:
 		get_tree().paused = true
+	elif lives > 0: #Randomize array again and go again with higher difficulty!
+		speed = speed + 1.0
+		print("speed is: ", speed)
+		random_minigames = minigames.duplicate()
+		random_minigames.shuffle()
+		print(random_minigames)
+	if lives < 1:
+		restart_game()
+
+func add_minigames_to_array():
+	minigames.append(minigame_spread_out)
+	minigames.append(minigame_platformer)
+	minigames.append(minigame_spread_the_love)
+	minigames.append(minigame_spread_the_wings)
+	minigames.append(minigame_weed_killer)
+
+func restart_game():
+	get_tree().change_scene_to_file("res://main.tscn")
+	lives = 3
+	weed_killer_score = 0
+	spread_the_love_score = 0
+	spread_your_wings_score = 0
+	spread_out_timer = 8
+	score = 0
+	game_over = false
+	has_won = false
+	game_start = false
+	is_game_paused = false
+	speed = 1.0
+	lives = 3
+	retry = true
+	get_tree().paused = false

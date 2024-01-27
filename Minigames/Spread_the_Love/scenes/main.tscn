@@ -7,9 +7,9 @@
 [ext_resource type="Script" path="res://Minigames/Spread_the_Love/scripts/SpeedLabel.gd" id="5_2qpbw"]
 [ext_resource type="Script" path="res://Minigames/Spread_the_Love/scripts/Timer.gd" id="5_x0ihl"]
 [ext_resource type="Script" path="res://Minigames/Spread_the_Love/scripts/ScoreLabel.gd" id="6_ynitl"]
-[ext_resource type="Script" path="res://Minigames/Spread_the_Love/scenes/Title.gd" id="8_7uc0k"]
+[ext_resource type="Script" path="res://Minigames/Spread_the_Love/scripts/Title.gd" id="8_7uc0k"]
 [ext_resource type="FontFile" uid="uid://ctxvr2siy75fd" path="res://Minigames/Weed_Killer/pixely_font.ttf" id="9_ix6d0"]
-[ext_resource type="Script" path="res://Minigames/Weed_Killer/scenes/GlobalScoreLabel.gd" id="10_ejxph"]
+[ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/GlobalScoreLabel.gd" id="10_ejxph"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ejnl7")

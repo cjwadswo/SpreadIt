@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://Minigames/Spread_Out/Transitions.gd" id="9_li7ca"]
 [ext_resource type="FontFile" uid="uid://ctxvr2siy75fd" path="res://Minigames/Weed_Killer/pixely_font.ttf" id="9_xvec6"]
 [ext_resource type="Texture2D" uid="uid://6nmi7340woxa" path="res://MainMenu/butter_knife.png" id="10_8o7ca"]
-[ext_resource type="Script" path="res://Minigames/Weed_Killer/scenes/GlobalScoreLabel.gd" id="10_e4ou5"]
+[ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/GlobalScoreLabel.gd" id="10_e4ou5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4efak"]
 font_size = 28
