@@ -1,4 +1,6 @@
-[gd_scene load_steps=30 format=3 uid="uid://dou2henr0qryf"]
+
+[gd_scene load_steps=35 format=3 uid="uid://dou2henr0qryf"]
+
 
 [ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/main.gd" id="1_ognl5"]
 [ext_resource type="Texture2D" uid="uid://bxbn83chtuxye" path="res://Minigames/Weed_Killer/sprites/fliower_sheet.png" id="2_ysujx"]
@@ -14,8 +16,10 @@
 [ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/Timer.gd" id="11_s5t42"]
 [ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/SpeedLabel.gd" id="13_07pvn"]
 [ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/ScoreLabel.gd" id="14_axm2p"]
-[ext_resource type="FontFile" uid="uid://b4am8e5yrtwmg" path="res://Minigames/Spread_the_Love/pixely_font.ttf" id="15_al3xc"]
-[ext_resource type="Script" path="res://Minigames/Weed_Killer/scripts/Title.gd" id="16_p5imb"]
+
+[ext_resource type="Texture2D" uid="uid://6nmi7340woxa" path="res://MainMenu/butter_knife.png" id="15_sjw0d"]
+[ext_resource type="Script" path="res://Minigames/Spread_Out/Transitions.gd" id="16_r4ktl"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2sqmc"]
 texture = ExtResource("4_33lhr")
@@ -116,6 +120,60 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6qq0"]
 size = Vector2(66, 85)
+
+[sub_resource type="Animation" id="Animation_t3lmi"]
+resource_name = "move_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-34, -21), Vector2(-34, 757)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kx3yt"]
+_data = {
+"move_down": SubResource("Animation_t3lmi")
+}
+
+[sub_resource type="Animation" id="Animation_7ax0f"]
+resource_name = "Fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 5.27803),
+"update": 0,
+"values": [Color(1, 0.941176, 0.478431, 1), Color(1, 0.941176, 0.478431, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i0su1"]
+_data = {
+"Fade_in": SubResource("Animation_7ax0f")
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tm1at"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ognl5")
@@ -324,27 +382,50 @@ theme_override_fonts/font = ExtResource("9_rsrex")
 text = "Score: "
 script = ExtResource("14_axm2p")
 
-[node name="Title" type="Label" parent="."]
-z_index = 1
-offset_left = 1.0
-offset_top = 450.0
-offset_right = 359.0
-offset_bottom = 495.0
-pivot_offset = Vector2(179, 22)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("15_al3xc")
-text = "Weeds are Spreading!
-Save the flowers!"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("16_p5imb")
 
-[node name="Timer" type="Timer" parent="Title"]
-wait_time = 3.0
-one_shot = true
-autostart = true
+[node name="Transition" type="ColorRect" parent="."]
+offset_left = -34.0
+offset_top = -21.0
+offset_right = 834.0
+offset_bottom = 673.001
+scale = Vector2(0.501343, -1.10295)
+color = Color(1, 1, 0.631373, 1)
+
+[node name="ButterKnife" type="Sprite2D" parent="Transition"]
+position = Vector2(467.859, 19.1477)
+rotation = 1.57422
+scale = Vector2(1.01901, -6.09298)
+texture = ExtResource("15_sjw0d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
+libraries = {
+"": SubResource("AnimationLibrary_kx3yt")
+}
+
+[node name="Transitions" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -126.0
+offset_top = -9.0
+offset_right = -86.0
+offset_bottom = 31.0
+script = ExtResource("16_r4ktl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transitions"]
+libraries = {
+"": SubResource("AnimationLibrary_i0su1")
+}
+
+[node name="TextureRect" type="TextureRect" parent="Transitions"]
+modulate = Color(1, 0.941176, 0.478431, 1)
+layout_mode = 0
+offset_left = 60.0
+offset_top = -14.0
+offset_right = 547.0
+offset_bottom = 687.0
+pivot_offset = Vector2(90, 160)
+texture = SubResource("CanvasTexture_tm1at")
+
 
 [connection signal="emitscore" from="Flower" to="." method="_on_flower_emitscore"]
 [connection signal="emitscore" from="Flower" to="Flower" method="_on_emitscore"]
@@ -359,4 +440,6 @@ autostart = true
 [connection signal="emitscore" from="Flower9" to="." method="_on_flower_emitscore"]
 [connection signal="timeout" from="Weed_Generator/Timer" to="Weed_Generator" method="_on_timer_timeout"]
 [connection signal="out_of_time" from="Timer" to="." method="_on_timer_out_of_time"]
-[connection signal="timeout" from="Title/Timer" to="Title" method="_on_timer_timeout"]
+
+[connection signal="animation_finished" from="Transition/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+

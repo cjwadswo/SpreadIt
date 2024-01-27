@@ -3,13 +3,13 @@ extends Node2D
 func _ready():
 	Global.game_over = false
 	Global.has_won = false
-	Global.weed_killer_score = 0
+
+	get_node("Transitions/AnimationPlayer").play("Fade_in")
 
 func game_won():
-	Global.score += 1
-	Global.game_over = true
-	Global.has_won = true
-	print("won weed killer")
+	get_node("Transition/AnimationPlayer").play("move_down")
+	
+
 
 func game_lost():
 	Global.game_over = true
@@ -31,3 +31,10 @@ func _process(delta):
 
 func _on_flower_emitscore():
 	Global.weed_killer_score += 1
+
+
+func _on_animation_player_animation_finished(anim_name):
+	Global.score += 1
+	Global.game_over = true
+	Global.has_won = true
+	
